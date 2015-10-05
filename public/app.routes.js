@@ -1,11 +1,11 @@
 ba.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/aktuelles');
     
     $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
-        .state('graphAnalyser', {
+        .state('home', {
             url: '/',
             views: {
                 '':{

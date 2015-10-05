@@ -127,6 +127,92 @@ main .welcomeSection .greeting {
 .aboutMe {
   padding-bottom: 8rem;
 }
+md-sidenav {
+  height: 100%;
+  background-image: url("/assets/img/sidenavBg.png");
+  background-size: cover;
+}
+md-sidenav .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  z-index: -1;
+  opacity: 0.3;
+}
+.menu-button {
+  background-color: #1a77c1 !important;
+  position: absolute;
+  top: 10;
+  left: 10;
+}
+md-content {
+  overflow: inherit;
+}
+.logoWrapper {
+  margin-top: 1rem;
+}
+.logoWrapper .lpkLogo {
+  width: 10rem;
+}
+.menuItems {
+  margin-top: 2rem;
+}
+.menuItems .menuItem {
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 1rem;
+  padding-left: 2rem;
+  text-align: left;
+  transition: background-color 200ms linear;
+}
+.menuItems .menuItem:hover {
+  background-color: rgba(25,25,25,0.55);
+  cursor: pointer;
+}
+.menuItems .menuItem.selected {
+  background-color: rgba(25,25,25,0.55);
+  cursor: default;
+}
+@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+  body {
+    font-size: 1rem;
+  }
+  .menu-button {
+    width: 8rem !important;
+    height: 8rem !important;
+    font-size: 2rem !important;
+  }
+  md-sidenav {
+    min-width: 70%;
+    max-width: 70%;
+  }
+  .logoWrapper {
+    margin-top: 1rem;
+  }
+  .logoWrapper .lpkLogo {
+    width: 21rem;
+  }
+  .menuItems {
+    margin-top: 2rem;
+  }
+  .menuItems .menuItem {
+    font-size: 4rem;
+    color: #fff;
+    padding: 2rem;
+    padding-left: 5rem;
+    padding-right: 0rem;
+    text-align: left;
+  }
+  .menuItems .menuItem:hover {
+    background-color: rgba(25,25,25,0.55);
+    cursor: pointer;
+  }
+  .menuItems .menuItem.selected {
+    background-color: rgba(25,25,25,0.55);
+    cursor: default;
+  }
+}
 html {
   height: 100%;
 }

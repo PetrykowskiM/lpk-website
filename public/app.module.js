@@ -1,13 +1,10 @@
 'use strict'
 
-$(document).ready(function(){
-    $('.parallax').parallax();
-});
-
 /* App Module */
-var ba = angular.module('ba', [
-	'landingPage',
+var ba = angular.module('lpkbb', [
+    'ngMaterial',
     'ui.router',
+    'landingPage'
 ])
 
 
