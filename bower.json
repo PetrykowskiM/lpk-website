@@ -1,0 +1,15 @@
+{
+  "name": "N2O",
+  "description": "lpk-bb Website",
+  "version": "0.0.0",
+  "homepage": "lpk-brandenburg.de",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.1",
+    "jquery": "~2.1.4",
+    "angular-ui-router": "~0.2.15",
+    "font-awesome": "~4.3.0",
+    "angular-materialize": "*",
+    "materialize": "~0.97.0"
+  }
+}

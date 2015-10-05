@@ -1,0 +1,218 @@
+.landingPageImage {
+  width: 100%;
+}
+.imageWrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-color: rgba(0,0,0,0.13);
+}
+.imageWrapper .filterLayer {
+  height: 100%;
+  width: 100%;
+}
+nav {
+  position: relative;
+  z-index: 99;
+  opacity: 0.9;
+}
+.sectionHeader {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #81c784;
+  padding: 1rem;
+}
+.sectionContent {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: #81c784;
+}
+.mailAddress {
+  color: #545454;
+  font-weight: normal;
+}
+.projectCard {
+  padding: 0.5rem !important;
+}
+.projectCard div {
+  background-color: #fff;
+}
+.card-image {
+  position: relative;
+}
+.card-image .logo {
+  position: absolute !important;
+  top: 0 !important;
+  width: 60% !important;
+  height: auto;
+  margin: auto;
+}
+.dummy {
+  height: 1rem;
+}
+.skillItemIcon {
+  margin: 1rem auto;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: #545454;
+  position: relative;
+  transition: all 0.8s;
+}
+.skillItemIcon img {
+  max-height: 3.4rem;
+  width: 3.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.7rem;
+  margin-left: -1.7rem;
+  transition: all 0.8s;
+}
+.skillItemIcon span {
+  line-height: 5rem;
+  max-width: 5rem;
+  font-size: 1rem;
+  color: #545454;
+  display: none;
+}
+.skillItemIcon:hover {
+  background-color: #bdbdbd;
+  cursor: pointer;
+}
+.skillItemIcon:hover > img {
+  opacity: 0;
+}
+.skillItemIcon:hover > span {
+  display: inherit;
+  transition: all 1s;
+}
+main {
+  height: 90%;
+/*margin-top -84px*/
+  background: url("../img/bg_landingPage.jpg");
+  background-size: cover;
+  position: relative;
+}
+main .section {
+  width: 100%;
+  margin-bottom: 0;
+}
+main .projects {
+  background-color: #545454;
+  color: #fff;
+}
+main .welcomeSection {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 5%;
+  position: relative;
+}
+main .welcomeSection .greeting {
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  font-size: 5rem;
+  color: #fff;
+}
+.text-left {
+  text-align: left;
+}
+.footerTop {
+  text-align: right;
+}
+.aboutMe {
+  padding-bottom: 8rem;
+}
+html {
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font: medium;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: font_color;
+  background: bgColor;
+}
+.full-height {
+  height: 100%;
+}
+.main-section {
+  padding-top: 3rem;
+  margin-top: -3rem;
+}
+.activeMaster {
+  background: #e5e5e5;
+}
+.topPadding {
+  padding-top: 1rem;
+}
+.highlight {
+  background-color: #ff0;
+}
+.warningIcon {
+  color: #d50909;
+}
+.landingPage {
+  background-image: url("../img/landingPage.jpg");
+  background-size: 150% auto;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+@media only screen and (max-width: 800px) {
+  .landingPage {
+    background-image: url("../img/landingPage_mobile.jpg");
+    background-size: 150% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+}
+.contentWrapper {
+  text-align: center;
+  position: absolute;
+  background: rgba(216,216,216,0.6);
+  color: #fff;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.registerButton {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto 3rem auto;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  width: 8rem;
+  border: 1px solid #fff;
+  background: rgba(92,92,92,0.8);
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem;
+  display: inline-block;
+}
+.registerButton:hover {
+  background: #1a77c1;
+  cursor: pointer;
+}
+.contentText {
+  color: #000;
+  text-align: left;
+  padding: 6rem;
+  height: 100%;
+  overflow: auto;
+}
+.thanks {
+  font-size: 2rem;
+}

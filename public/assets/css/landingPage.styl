@@ -1,0 +1,132 @@
+colorGreen = #81C784
+colorGray = #545454
+colorGrayLight = #BDBDBD
+
+.landingPageImage
+  width 100%
+
+.imageWrapper
+  height 100%
+  width 100%
+  overflow hidden
+  position absolute
+  background-color rgba(0, 0, 0, 0.13)
+
+  .filterLayer
+    height 100%
+    width 100%
+
+nav
+  position relative
+  z-index 99
+  opacity 0.9
+
+.sectionHeader
+  font-size 2rem
+  font-weight: 800
+  color #81C784
+  padding 1rem
+
+.sectionContent
+  font-size 1.5rem
+  font-weight lighter
+  color colorGreen
+
+.mailAddress
+  color colorGray
+  font-weight normal
+
+.projectCard
+  padding 0.5rem !important
+
+  div
+    background-color white
+
+.card-image
+  position relative
+  .logo
+    position absolute !important
+    top 0 !important
+    width 60% !important
+    height auto
+    margin auto
+
+.dummy
+  height 1rem
+
+.skillItemIcon
+  margin 1rem auto
+  height 5rem
+  width 5rem
+  border-radius 50%
+  background-color colorGray
+  position relative
+  transition all 0.8s
+
+  img
+    max-height 3.4rem
+    width 3.4rem
+    position absolute
+    top 50%
+    left 50%
+    margin-top -1.7rem
+    margin-left -1.7rem
+    transition all 0.8s
+
+  span
+    line-height 5rem
+    max-width 5rem
+    font-size 1rem
+    color colorGray
+    display none
+
+  &:hover
+    background-color colorGrayLight
+    cursor pointer
+
+  &:hover > img
+    opacity 0
+
+  &:hover > span
+    display inherit
+    transition all 1s
+
+main
+  height 90%
+  /*margin-top -84px*/
+  background: url(../img/bg_landingPage.jpg)
+  background-size cover
+  position relative
+
+  .section
+    width 100%
+    margin-bottom 0
+
+
+  .projects
+    background-color colorGray
+    color white
+
+  .welcomeSection
+    height 100%
+    width 100%
+    margin-bottom 5%
+    position relative
+
+    .greeting
+      display: inline-block
+      position absolute
+      top 30%
+      left 0
+      right 0
+      font-size 5rem
+      color white
+
+.text-left
+  text-align left
+
+.footerTop
+  text-align right
+
+.aboutMe
+  padding-bottom 8rem

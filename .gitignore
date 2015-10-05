@@ -1,0 +1,5 @@
+# Created by .gitignore support plugin (hsz.mobi)
+node_modules
+public/assets/libs
+.idea
+lpk-website.iml
