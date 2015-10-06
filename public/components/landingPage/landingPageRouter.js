@@ -59,4 +59,26 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             }
 
         })
+
+        .state('home.intern', {
+            url: 'intern',
+            views: {
+                'mainContent@home':{
+                    //controller: 'landingPageCtrl',
+                    templateUrl: 'components/intern/intern.html'
+                }
+            }
+
+        })
+
+        .state('home.impressum', {
+            url: 'impressum',
+            views: {
+                'mainContent@home':{
+                    //controller: 'landingPageCtrl',
+                    templateUrl: 'components/impressum/impressum.html'
+                }
+            }
+
+        })
 });

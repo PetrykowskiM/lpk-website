@@ -68,6 +68,9 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
         for(var entry in $scope.menuItems){
             $scope.menuItems[entry].selected = false
         }
-        $scope.menuItems[key].selected = true
+
+        if(key){
+            $scope.menuItems[key].selected = true
+        }
     }
 }])
