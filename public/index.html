@@ -1,7 +1,7 @@
 <html ng-app="lpkbb">
     <head>
         <title>Landespressekonferenz BB</title>
-        <base href="/index.html">
+        <!--<base href="/index.html">-->
 
         <!--FONT-->
         <link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css">
@@ -16,6 +16,7 @@
         <script src="assets/libs/angular-aria/angular-aria.min.js"></script>
         <script src="assets/libs/angular-material/angular-material.min.js"></script>
         <script src="assets/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="assets/libs/ng-flow/dist/ng-flow-standalone.min.js"></script>
 
 
         <script src="app.module.js"></script>
@@ -23,9 +24,23 @@
         <script src="components/landingPage/landingPageController.js"></script>
         <script src="components/landingPage/landingPageRouter.js"></script>
 
+
+
+        <script src="components/intern/internController.js"></script>
+        <script src="components/intern/internRouter.js"></script>
+        <script src="components/intern/adminController.js"></script>
+
+        <script src="components/services/dataProvider.js"></script>
+
+        <script src="components/intern/neuigkeiten/neuigkeitenController.js"></script>
+        <script src="components/intern/veranstaltungen/veranstaltungenController.js"></script>
+        <script src="components/intern/termine/termineController.js"></script>
+
+        <script src="components/intern/adminInteractionService.js"></script>
+
     </head>
 
-    <body>
+    <body flow-prevent-drop>
 
         <div ui-view class="content full-height">
 

@@ -1,0 +1,20 @@
+<md-tabs class="md-accent" md-selected="selectedIndex" md-dynamic-height>
+    <md-tab id="tab1" ng-click="selected('Neuigkeiten')">
+        <md-tab-label>Neuigkeiten</md-tab-label>
+        <md-tab-body>
+            <div ui-view="news" class="tabContent"></div>
+        </md-tab-body>
+    </md-tab>
+    <md-tab id="tab2" ng-click="selected('Termine')">
+        <md-tab-label>Termine</md-tab-label>
+        <md-tab-body>
+            <div ui-view="dates" class="tabContent"></div>
+        </md-tab-body>
+    </md-tab>
+    <md-tab id="tab3" ng-click="selected('Veranstaltungen')">
+        <md-tab-label>Veranstaltungen</md-tab-label>
+        <md-tab-body>
+            <div ui-view="events" class="tabContent"></div>
+        </md-tab-body>
+    </md-tab>
+</md-tabs>

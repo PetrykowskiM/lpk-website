@@ -1,4 +1,4 @@
-var landingPage = angular.module('landingPage', [])
+var landingPage = angular.module('landingPage', ['intern'])
 
 landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', '$mdMedia','$state', function($scope, $interval, $mdSidenav, $mdMedia, $state){
 

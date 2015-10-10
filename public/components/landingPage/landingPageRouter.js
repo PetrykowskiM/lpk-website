@@ -64,7 +64,7 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             url: 'intern',
             views: {
                 'mainContent@home':{
-                    //controller: 'landingPageCtrl',
+                    controller: 'internCtrl',
                     templateUrl: 'components/intern/intern.html'
                 }
             }

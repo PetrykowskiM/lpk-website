@@ -3,3 +3,4 @@ node_modules
 public/assets/libs
 .idea
 lpk-website.iml
+private/data.db

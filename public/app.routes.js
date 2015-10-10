@@ -15,4 +15,15 @@ ba.config(function($stateProvider, $urlRouterProvider) {
             }
 
         })
+
+        .state('intern', {
+            url: '/admin',
+            views: {
+                '':{
+                    controller: 'adminCtrl',
+                    templateUrl: 'components/intern/admin.html'
+                }
+            }
+
+        })
 });

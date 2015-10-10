@@ -15,6 +15,7 @@ app.use(bodyParser.json())
 app.use(stylus.middleware(path.join(__dirname, 'public')))
 
 app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/images'))
 
 // --- route initialization
 require('./private/routes.js')(app)

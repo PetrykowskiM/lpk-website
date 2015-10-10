@@ -1,0 +1,108 @@
+.adminPanel
+  padding-left 25%
+  padding-right 25%
+  margin-top -48px
+  padding-top 48px
+
+
+.left
+  float left
+
+.saveButton
+  float right
+
+.dividingMargin
+  margin-bottom 2.5rem
+
+md-input-container
+  label
+    text-align left
+
+md-pagination-wrapper
+  background-color rgb(63,81,181)
+
+md-ink-bar
+  background-color black !important
+
+md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled])
+  color black
+
+.entryWrapper
+  overflow-y: scroll;
+  /*overflow scroll*/
+  max-height 15rem
+
+.adminNewsItem
+  text-align left
+  padding-top 1rem
+  padding-bottom 1rem
+  line-height 3rem
+
+  &:hover
+    /*background selectedBg*/
+    cursor pointer
+    font-weight bold
+
+  .date
+    padding-right 1rem
+
+  .deleteButton
+    float right
+
+.imageDropField
+  border 5px dashed rgb(63,81,181)
+  padding 1rem
+  margin-bottom 2rem
+  cursor pointer
+
+  .imagePreview
+    display inline-block
+    margin 1rem
+    position: relative
+
+    img
+      max-width 6rem
+      height auto
+
+    &:hover
+      .imageDarken
+        visibility visible
+
+      .icon
+        visibility visible
+
+    .imageDarken
+      visibility hidden
+      position absolute
+      height 100%
+      width 100%
+      top 0
+      left 0
+      background-color rgba(0, 0, 0, 0.35)
+
+    .icon
+      visibility: hidden
+      position absolute
+      top 20%
+      left 50%
+      color #ffffff
+
+      i
+        position: relative
+        left -50%
+
+
+
+  .containsFiles
+    visibility hidden
+
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}

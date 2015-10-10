@@ -1,0 +1,21 @@
+<div class="adminPanel">
+    <md-input-container flex>
+        <label>Titel</label>
+        <input ng-model="newsEntry.headline">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Untertitel</label>
+        <input ng-model="newsEntry.subheadline">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Inhalt</label>
+        <textarea ng-model="newsEntry.content" columns="1"></textarea>
+    </md-input-container>
+    <md-datepicker class="left" ng-model="newsEntry.date" md-placeholder="Datum" flex="50"></md-datepicker>
+    <md-button class="md-raised md-primary saveButton dividingMargin" flex="50">Speichern</md-button>
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>Alle Einträge</span>
+        </h2>
+    </md-toolbar>
+</div>

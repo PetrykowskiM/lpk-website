@@ -9,7 +9,7 @@ var ba = angular.module('lpkbb', [
 
 
 ba.config(["$httpProvider", '$locationProvider',function($httpProvider, $locationProvider){
-    $locationProvider.html5Mode(true)
+    //$locationProvider.html5Mode(true)
 }])
 
 //On Init of webapp
