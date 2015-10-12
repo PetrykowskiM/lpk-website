@@ -1,5 +1,5 @@
-intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$mdToast", "lpk_admin",
-    function($scope, $state, dataProvider, $mdToast, lpk_admin){
+intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$mdToast", "lpk_admin", '$q',
+    function($scope, $state, dataProvider, $mdToast, lpk_admin, q){
 
     $scope.newsEntry = {
         headline: "",
@@ -23,18 +23,22 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
         })
 
     $scope.selectedEntry = function(index){
-        currentlyEditing = true
-        selectedEntry = index
+        if(!currentlyEditing) {
+            currentlyEditing = true
+            selectedEntry = index
 
-        var entry = $scope.allNews[index]
-        entry.images = JSON.parse(entry.images)
-        oldDate = entry.date
-        entry.date = new Date(entry.date)
+            var entry = $scope.allNews[index]
+            entry.images = JSON.parse(entry.images)
+            oldDate = entry.date
+            entry.date = new Date(entry.date)
 
-        $scope.existingImages = entry.images
+            $scope.existingImages = entry.images
 
-        $scope.newsEntry = entry
-        console.log($scope.newsEntry)
+            var entryCopy = JSON.parse(JSON.stringify(entry))
+            entryCopy.date = new Date($scope.allNews[index].date.getTime())
+            $scope.newsEntry = entryCopy
+            console.log($scope.newsEntry)
+        }
     }
 
 
@@ -50,7 +54,28 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
         lpk_admin.deleteImage($scope.existingImages[index])
             .then(function(){
                 $scope.newsEntry.images.splice(index, 1)
+                $scope.existingImages.splice(index,1)
                 $scope.save(false)
+            })
+    }
+
+    $scope.deleteEntry = function(index, event){
+        event.stopPropagation()
+
+        lpk_admin.deleteEntry($scope.allNews[index])
+            .then(function(){
+                var promises = []
+
+                //Delete all belonging images
+                var images = JSON.parse($scope.allNews[index].images)
+                for(var imageIndex in images){
+                    promises.push(lpk_admin.deleteImage(images[imageIndex]))
+                }
+
+                q.all(promises)
+                    .then(function(){
+                        $scope.allNews.splice(index, 1)
+                    })
             })
     }
 
@@ -81,14 +106,18 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
                     lpk_admin.addNews(JSON.parse(JSON.stringify($scope.newsEntry)))
                     $scope.allNews.push($scope.newsEntry)
                 }else{
+                    var copy = JSON.parse(JSON.stringify($scope.newsEntry))
+                    copy.date = new Date($scope.allNews[selectedEntry].date.getTime())
+
                     lpk_admin.updateNews(JSON.parse(JSON.stringify($scope.newsEntry)))
                         .then(function(){
-                            $scope.allNews[selectedEntry] = $scope.newsEntry
+                            $scope.allNews[selectedEntry] = copy
                         })
 
                 }
 
                 if(shouldClear == null || shouldClear){
+
                     $scope.newsEntry = {
                         headline: "",
                         subheadline: "",
@@ -119,7 +148,7 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
 
     function getDateString(){
         var date = new Date()
-        return date.getDay() + "." + (date.getMonth()+1) + "." + date.getFullYear()
+        return date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear()
     }
 
 }])

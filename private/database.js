@@ -52,9 +52,25 @@ exports.updateEntry = function(entry){
 
 }
 
+exports.deleteEntry = function(entry){
+    var deferred = q.defer()
+
+    db.serialize(function() {
+        //var news = []
+        var stmt = db.prepare("DELETE FROM Entry WHERE type=? AND date=? ")
+
+        stmt.run(entry.type, entry.date)
+
+        deferred.resolve()
+
+
+    });
+
+    return deferred.promise
+}
+
 exports.getAllNews = function(){
-    var deferred = q.defer(),
-        promises = []
+    var deferred = q.defer()
 
     db.serialize(function() {
         //var news = []

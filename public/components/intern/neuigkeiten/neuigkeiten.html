@@ -51,7 +51,7 @@
         <div ng-repeat="entry in allNews" class="adminNewsItem" ng-click="selectedEntry($index)">
             <span class="date" >{{entry.date | date: 'dd.MM.yy'}}</span>
             <span class="title">{{entry.headline}}</span>
-            <md-button class="md-icon-button deleteButton" aria-label="Delete">
+            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteEntry($index, $event)">
                 <i class="fa fa-trash-o fa-2x"></i>
             </md-button>
         </div>

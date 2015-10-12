@@ -22,6 +22,10 @@ intern.factory('lpk_admin', ['$http', '$rootScope', function($http, $rootScope){
 
         deleteImage: function(path){
             return $http.post("/deleteImage", {path: path})
+        },
+
+        deleteEntry: function(entry){
+            return $http.post('/entry/delete', entry)
         }
 
     }

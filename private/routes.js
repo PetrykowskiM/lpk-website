@@ -23,12 +23,25 @@ module.exports = function(app) {
   */
 
   app.route('/news')
-    .all(isAuthenticated)
+      .all(isAuthenticated)
       .get(function(req, res){
         db.getAllNews()
             .then(function(news){
               res.send(news)
             })
+      })
+
+    app.route('/entry/delete')
+      .post(function(req, res){
+          var newsEntry = req.body
+
+          db.deleteEntry(newsEntry)
+              .then(function(){
+                  res.sendStatus(200)
+              })
+              .catch(function(){
+                  res.sendStatus(400)
+              })
       })
 
   app.route('/news/add')
@@ -97,7 +110,7 @@ module.exports = function(app) {
               console.log('POST', status, original_filename, identifier, filename);
 
               var date = new Date(),
-                  dateString = date.getDay() + "." + (date.getMonth()+1) + "." + date.getFullYear()
+                  dateString = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear()
 
               var oldPath = __dirname + "/../tmp/" +"flow-" + identifier + ".1",
                   newPath = "images/" + dateString + "/" + original_filename
