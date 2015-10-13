@@ -12,7 +12,21 @@ landingPage.provider('lpk_dataProvider', function(){
                     console.log("could not load news. Following error occured: \n", err)
                     return {}
                 })
-            //}
+
+            return deferred.promise
+        },
+
+        this.getEvents = function(){
+            var deferred = $q.defer()
+
+            $http.get('/events', {})
+                .success(function (news) {
+
+                    deferred.resolve(news)
+                }, function (err) {
+                    console.log("could not load news. Following error occured: \n", err)
+                    return {}
+                })
 
             return deferred.promise
         }

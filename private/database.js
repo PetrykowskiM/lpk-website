@@ -41,9 +41,9 @@ exports.updateEntry = function(entry){
 
     db.serialize(function() {
 
-        var stmt = db.prepare("UPDATE Entry SET headline=?, subheadline=?, content=?, images=?, custom=?, customHtml=?, date=? WHERE type='news' AND date=? ")
+        var stmt = db.prepare("UPDATE Entry SET headline=?, subheadline=?, content=?, images=?, custom=?, customHtml=?, date=? WHERE type=? AND date=? ")
 
-        stmt.run(entry.headline, entry.subheadline, entry.content, entry.images, entry.custom, entry.customHtml, entry.date, entry.oldDate)
+        stmt.run(entry.headline, entry.subheadline, entry.content, entry.images, entry.custom, entry.customHtml, entry.date, entry.type, entry.oldDate)
 
         deferred.resolve()
     });
@@ -75,6 +75,23 @@ exports.getAllNews = function(){
     db.serialize(function() {
         //var news = []
         db.all("SELECT * FROM Entry Where type='news'", function(err, rows) {
+
+            deferred.resolve(rows)
+
+        });
+
+
+    });
+
+    return deferred.promise
+}
+
+exports.getAllEvents = function(){
+    var deferred = q.defer()
+
+    db.serialize(function() {
+        //var news = []
+        db.all("SELECT * FROM Entry Where type='event'", function(err, rows) {
 
             deferred.resolve(rows)
 

@@ -23,7 +23,6 @@ module.exports = function(app) {
   */
 
   app.route('/news')
-      .all(isAuthenticated)
       .get(function(req, res){
         db.getAllNews()
             .then(function(news){
@@ -32,6 +31,7 @@ module.exports = function(app) {
       })
 
     app.route('/entry/delete')
+      .all(isAuthenticated)
       .post(function(req, res){
           var newsEntry = req.body
 
@@ -77,6 +77,49 @@ module.exports = function(app) {
                     res.sendStatus(200)
                 })
 
+        })
+
+  app.route('/events')
+      .get(function(req, res){
+          db.getAllEvents()
+              .then(function(news){
+                  res.send(news)
+              })
+      })
+
+  app.route('/events/update')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var eventEntry = req.body
+            eventEntry.type = "event"
+
+
+            if(eventEntry.custom != null && eventEntry.custom == 0){
+                eventEntry.customHtml = ""
+            }
+
+            db.updateEntry(eventEntry)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+
+        })
+
+   app.route('/events/add')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var eventsEntry = req.body
+            eventsEntry.type = "event"
+
+
+            if(eventsEntry.custom != null && eventsEntry.custom == 0){
+                eventsEntry.customHtml = ""
+            }
+
+            db.addEntry(eventsEntry)
+                .then(function(){
+                    res.sendStatus(200)
+                })
         })
 
   app.route('/deleteImage')

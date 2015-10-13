@@ -90,6 +90,9 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
             if ($scope.newsEntry.headline != "" && $scope.newsEntry.content != "") {
                 $scope.newsEntry.images = JSON.stringify($scope.newsEntry.images)
 
+                if(typeof $scope.newsEntry.date != 'object')
+                    $scope.newsEntry.date = new Date($scope.newsEntry.date)
+
                 $scope.newsEntry.date.setHours(0)
                 $scope.newsEntry.date.setMinutes(0)
                 $scope.newsEntry.date.setSeconds(0)
@@ -107,7 +110,7 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
                     $scope.allNews.push($scope.newsEntry)
                 }else{
                     var copy = JSON.parse(JSON.stringify($scope.newsEntry))
-                    copy.date = new Date($scope.allNews[selectedEntry].date.getTime())
+                    copy.date = new Date($scope.newsEntry.date)
 
                     lpk_admin.updateNews(JSON.parse(JSON.stringify($scope.newsEntry)))
                         .then(function(){
