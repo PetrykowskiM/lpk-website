@@ -1,0 +1,3 @@
+landingPage.controller("imageViewerCtrl", function(){
+
+})

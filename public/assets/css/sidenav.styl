@@ -64,7 +64,49 @@ md-content
       background-color selectedBg
       cursor pointer
 
+.topMenu
+  width 100%
+  height 15rem
+  background-image url("/assets/img/nav_vertical.jpeg")
+  background-size cover
 
+  .contentWrapperTopNavigation
+    padding 0 20%
+    position relative
+
+    .lpkLogo
+      width 10rem
+      float right
+      margin-top 1.5rem
+
+    .navigationTop
+      background-color selectedBg
+      display inline-block
+      margin-top 7rem
+      float left
+      display inline-flex
+
+      .menuItem
+        padding 0.8rem
+        color white
+        font-size 1.2rem
+
+        &:hover
+          background-color black
+          cursor pointer
+
+    .navFooter
+      text-align right
+      position absolute
+      right 20%
+      top 12rem
+
+      .footerItem
+        padding-top 0.3rem
+
+        &:hover
+          color secondaryColor
+          cursor pointer
 
 /*Iphone*/
 @media only screen  and (min-device-width : 375px)  and (max-device-width : 667px)

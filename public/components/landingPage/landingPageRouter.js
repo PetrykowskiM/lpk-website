@@ -9,7 +9,7 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             url: 'aktuelles',
             views: {
                 'mainContent@home':{
-                    //controller: 'landingPageCtrl',
+                    controller: 'aktuellesCtrl',
                     templateUrl: 'components/aktuelles/aktuelles.html'
                 }
             }

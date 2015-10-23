@@ -58,12 +58,18 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
     };
 
     $scope.isLarge = function(){
-        return $mdMedia("gt-lg")
+        return $mdMedia("gt-md")
     }
 
-    $scope.goTo = function(state, key){
+    $scope.greaterSmall = function(){
+        return $mdMedia("gt-md")
+    }
+
+    $scope.goTo = function(state, key, toggleMenu){
         $state.go(state)
-        $mdSidenav('left').toggle();
+        if(toggleMenu){
+            $mdSidenav('left').toggle();
+        }
 
         for(var entry in $scope.menuItems){
             $scope.menuItems[entry].selected = false

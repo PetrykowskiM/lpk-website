@@ -1,10 +1,11 @@
 .contentContainer
-  width 100%
+  width 60%
   text-align left
+  padding-left 20%
+  padding-right 20%
 
   .titleWrapper
     padding-top 1rem
-    padding-left 2rem
     width 100%
     text-align left
     /*background-color secondaryColor*/
@@ -14,18 +15,24 @@
       font-size 2.5rem
 
   .content
-    padding-left 2rem
     padding-top 2rem
 
 md-content
   width 100%
 
 
+
 /*Iphone*/
 @media only screen  and (min-device-width : 375px)  and (max-device-width : 667px)
 
+  .mainContent
+    height auto
+    margin-top 0
+    padding-top 0
+
   .contentContainer
     width 90%
+    padding 0
 
     .titleWrapper
       padding-left 2rem
@@ -42,3 +49,13 @@ md-content
       padding-left 2rem
       font-size 3rem
       padding-top 5rem
+
+
+
+
+/*.mainContent*/
+/*height 100%*/
+/*margin-top -15rem*/
+/*padding-top 15rem*/
+/*width 100%*/
+/*overflow-y auto*/

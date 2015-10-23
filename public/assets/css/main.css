@@ -191,6 +191,50 @@ md-content {
   background-color: rgba(25,25,25,0.55);
   cursor: pointer;
 }
+.topMenu {
+  width: 100%;
+  height: 15rem;
+  background-image: url("/assets/img/nav_vertical.jpeg");
+  background-size: cover;
+}
+.topMenu .contentWrapperTopNavigation {
+  padding: 0 20%;
+  position: relative;
+}
+.topMenu .contentWrapperTopNavigation .lpkLogo {
+  width: 10rem;
+  float: right;
+  margin-top: 1.5rem;
+}
+.topMenu .contentWrapperTopNavigation .navigationTop {
+  background-color: rgba(25,25,25,0.55);
+  display: inline-block;
+  margin-top: 7rem;
+  float: left;
+  display: inline-flex;
+}
+.topMenu .contentWrapperTopNavigation .navigationTop .menuItem {
+  padding: 0.8rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.topMenu .contentWrapperTopNavigation .navigationTop .menuItem:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+.topMenu .contentWrapperTopNavigation .navFooter {
+  text-align: right;
+  position: absolute;
+  right: 20%;
+  top: 12rem;
+}
+.topMenu .contentWrapperTopNavigation .navFooter .footerItem {
+  padding-top: 0.3rem;
+}
+.topMenu .contentWrapperTopNavigation .navFooter .footerItem:hover {
+  color: #c43426;
+  cursor: pointer;
+}
 @media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
   body {
     font-size: 1rem;
@@ -331,12 +375,13 @@ md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > m
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
 }
 .contentContainer {
-  width: 100%;
+  width: 60%;
   text-align: left;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 .contentContainer .titleWrapper {
   padding-top: 1rem;
-  padding-left: 2rem;
   width: 100%;
   text-align: left;
 /*background-color secondaryColor*/
@@ -346,15 +391,20 @@ md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > m
   font-size: 2.5rem;
 }
 .contentContainer .content {
-  padding-left: 2rem;
   padding-top: 2rem;
 }
 md-content {
   width: 100%;
 }
 @media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+  .mainContent {
+    height: auto;
+    margin-top: 0;
+    padding-top: 0;
+  }
   .contentContainer {
     width: 90%;
+    padding: 0;
   }
   .contentContainer .titleWrapper {
     padding-left: 2rem;
@@ -372,6 +422,43 @@ md-content {
     font-size: 3rem;
     padding-top: 5rem;
   }
+}
+.cardWrapper {
+  display: block;
+}
+.newsCard {
+  margin: 1rem 10%;
+  display: inline-block;
+  width: 80%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.newsCard .cardTitleWrapper {
+  padding-bottom: 1rem;
+}
+.newsCard .cardTitleWrapper .cardTitle {
+  color: #c43426;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.newsCard .subtitleWrapper {
+  padding-bottom: 1.2rem;
+}
+.newsCard .subtitleWrapper .cardSubtitle {
+  color: #000;
+  font-weight: 500;
+}
+.newsCard .cardImages {
+  padding-top: 0.5rem;
+  display: flex;
+}
+.newsCard .cardImages .newsImage {
+  height: 6rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.newsCard .cardImages:hover {
+  cursor: pointer;
 }
 html {
   height: 100%;
@@ -457,7 +544,6 @@ html body {
   text-align: left;
   padding: 6rem;
   height: 100%;
-  overflow: auto;
 }
 .thanks {
   font-size: 2rem;

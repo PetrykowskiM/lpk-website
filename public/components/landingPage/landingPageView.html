@@ -1,5 +1,5 @@
 <div layout="row">
-    <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-lg')">
+    <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('st-md')">
         <div class="overlay"></div>
         <div class="logoWrapper">
 
@@ -8,7 +8,7 @@
         </div>
         <div class="menuItems">
 
-            <div class="menuItem" ng-class="{ 'selected': item.selected }" ng-repeat="(key, item) in menuItems" ng-click="goTo(item.state, key)">
+            <div class="menuItem" ng-class="{ 'selected': item.selected }" ng-repeat="(key, item) in menuItems" ng-click="goTo(item.state, key, true)">
                 <span class="itemText" >{{item.text}}</span>
             </div>
 
@@ -28,7 +28,30 @@
             <i class="fa fa-bars fa-2x"></i>
         </md-button>
 
-        <div ui-view="mainContent" class="mainContent full-height">
+        <div class="topMenu" ng-show="greaterSmall()">
+            <div class="contentWrapperTopNavigation">
+
+                <img class="lpkLogo" src="/assets/img/lpk_logo.png">
+
+                <div class="navigationTop">
+                    <div class="menuItem" ng-class="{ 'selected': item.selected }" ng-repeat="(key, item) in menuItems" ng-click="goTo(item.state, key, false)">
+                        <span class="itemText" >{{item.text}}</span>
+                    </div>
+                </div>
+
+                <div class="navFooter">
+                    <div class="footerItem" ng-click="goTo('home.intern', key)">
+                        <span class="itemText">Intern</span>
+                    </div>
+                    <div class="footerItem" ng-click="goTo('home.impressum', key)">
+                        <span class="itemText">Impressum</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div ui-view="mainContent" class="mainContent">
 
         </div>
 
