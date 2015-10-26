@@ -294,6 +294,9 @@ md-input-container label {
 md-pagination-wrapper {
   background-color: #3f51b5;
 }
+md-tabs-canvas {
+  background-color: #3f51b5;
+}
 md-ink-bar {
   background-color: #000 !important;
 }
