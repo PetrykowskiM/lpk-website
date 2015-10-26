@@ -58,11 +58,11 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
     };
 
     $scope.isSmall = function(){
-        return $mdMedia('(max-width: 800px)')
+        return !$mdMedia('gt-lg')
     }
 
     $scope.greaterSmall = function(){
-        return $mdMedia('(min-width: 800px)')
+        return $mdMedia('gt-lg')
     }
 
     $scope.goTo = function(state, key, toggleMenu){
