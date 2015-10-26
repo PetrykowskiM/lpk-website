@@ -400,7 +400,7 @@ md-content {
 @media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
   .mainContent {
     height: auto;
-    margin-top: 0;
+    margin-top: 10rem;
     padding-top: 0;
   }
   .contentContainer {

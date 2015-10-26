@@ -57,12 +57,12 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
         $mdSidenav('left').toggle();
     };
 
-    $scope.isLarge = function(){
-        return $mdMedia("gt-md")
+    $scope.isSmall = function(){
+        return $mdMedia('(max-width: 667px)')
     }
 
     $scope.greaterSmall = function(){
-        return $mdMedia("gt-md")
+        return $mdMedia('(min-width: 667px)')
     }
 
     $scope.goTo = function(state, key, toggleMenu){

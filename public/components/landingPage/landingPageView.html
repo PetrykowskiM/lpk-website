@@ -1,5 +1,5 @@
 <div layout="row">
-    <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('st-md')">
+    <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('(max-width: 667px)')">
         <div class="overlay"></div>
         <div class="logoWrapper">
 
@@ -24,7 +24,7 @@
         </div>
     </md-sidenav>
     <md-content ng-cloak md-swipe-right="openLeftMenu()">
-        <md-button class="md-fab menu-button" ng-click="openLeftMenu()" ng-hide="isLarge()">
+        <md-button class="md-fab menu-button" ng-click="openLeftMenu()" ng-show="isSmall()">
             <i class="fa fa-bars fa-2x"></i>
         </md-button>
 
