@@ -186,17 +186,17 @@ module.exports = function(app) {
           });
       })
 
-
-  app.route('/*')
-      .get(function(req, res) {
-        //var querystring = "?"
-        //for(var key in req.query){
-        //  querystring += "key="+req.query[key]+"&"
-        //}
-        //res.writeHead(301, {'Location':  'http://localhost/index.html#' + req.originalUrl + querystring})
-        //res.end()
-
-      })
+  //
+  //app.route('/*')
+  //    .get(function(req, res) {
+  //      //var querystring = "?"
+  //      //for(var key in req.query){
+  //      //  querystring += "key="+req.query[key]+"&"
+  //      //}
+  //      //res.writeHead(301, {'Location':  'http://localhost/index.html#' + req.originalUrl + querystring})
+  //      //res.end()
+  //
+  //    })
 }
 
 function isAuthenticated(req, res, next){

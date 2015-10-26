@@ -196,6 +196,7 @@ md-content {
   height: 15rem;
   background-image: url("/assets/img/nav_vertical.jpeg");
   background-size: cover;
+  position: relative;
 }
 .topMenu .contentWrapperTopNavigation {
   padding: 0 20%;
