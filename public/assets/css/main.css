@@ -463,7 +463,9 @@ md-content {
 }
 @media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
   .newsCard {
-    font-size: 3rem;
+    margin: 1rem 7%;
+    width: 100%;
+    font-size: 2.7rem;
   }
   .newsCard .cardTitleWrapper {
     padding-bottom: 1rem;
