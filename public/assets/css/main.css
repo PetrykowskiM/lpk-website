@@ -461,6 +461,26 @@ md-content {
 .newsCard .cardImages:hover {
   cursor: pointer;
 }
+@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+  .newsCard {
+    font-size: 3rem;
+  }
+  .newsCard .cardTitleWrapper {
+    padding-bottom: 1rem;
+  }
+  .newsCard .cardTitleWrapper .cardTitle {
+    font-size: 3.5rem;
+  }
+  .newsCard .subtitleWrapper {
+    padding-bottom: 3rem;
+  }
+  .newsCard .cardImages {
+    padding-top: 1.5rem;
+  }
+  .newsCard .cardImages .newsImage {
+    height: 18rem;
+  }
+}
 html {
   height: 100%;
 }
