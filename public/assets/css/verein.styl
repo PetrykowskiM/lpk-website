@@ -1,0 +1,77 @@
+.ziele
+  display block
+
+  .zielWrapper
+    text-align center
+    padding 0.7rem
+    display inline-block
+    margin 1.5rem
+
+    .zielHead
+      margin-top 0
+      border-radius 20rem
+      background-color secondaryColor
+      color white
+      display inline-block
+      width 3.5rem
+      height 3.5rem
+      padding 1rem
+      font-weight 700
+
+      &.shorter
+        line-height 1.7rem
+
+    .zielBody
+      padding 1.5rem
+      line-height 1.5rem
+      font-size 0.9rem
+
+.Divider
+  width 80%
+  margin 1rem 10%
+  text-align center
+  font-weight 500
+  font-size 3rem
+  margin-bottom 3rem
+  color black
+
+.boardMembers
+
+  .memberWrapper
+    margin-top 2rem
+
+    .memberImageWrapper
+      position relative
+      .imageCutter
+        position absolute
+        margin-top -3.25rem
+        top 50%
+        right 0
+        border-radius 20rem
+        height 6.5rem
+        width 6.5rem
+        overflow hidden
+        img
+          width 7rem
+
+  .information
+    padding 1rem
+    display block
+    line-height 1.5rem
+
+    .memberName
+      font-weight 500
+
+    .mail
+      padding-top 0.5rem
+
+
+@media (min-width : 1500px)
+
+  .ziele
+    display flex
+
+    .zielWrapper
+
+      .zielHead
+        margin-top 1.5rem

@@ -196,7 +196,7 @@ md-content {
   height: 15rem;
   background-image: url("/assets/img/nav_vertical.jpeg");
   background-size: cover;
-  position: relative;
+  position: fixed;
 }
 .topMenu .contentWrapperTopNavigation {
   padding: 0 20%;
@@ -218,6 +218,7 @@ md-content {
   padding: 0.8rem;
   color: #fff;
   font-size: 1.2rem;
+  outline: none !important;
 }
 .topMenu .contentWrapperTopNavigation .navigationTop .menuItem:hover {
   background-color: #000;
@@ -231,6 +232,7 @@ md-content {
 }
 .topMenu .contentWrapperTopNavigation .navFooter .footerItem {
   padding-top: 0.3rem;
+  outline: none !important;
 }
 .topMenu .contentWrapperTopNavigation .navFooter .footerItem:hover {
   color: #c43426;
@@ -383,6 +385,7 @@ md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > m
   text-align: left;
   padding-left: 20%;
   padding-right: 20%;
+  padding-top: 15rem;
 }
 .contentContainer .titleWrapper {
   padding-top: 1rem;
@@ -484,6 +487,81 @@ md-content {
   }
   .newsCard .cardImages .newsImage {
     height: 18rem;
+  }
+}
+.ziele {
+  display: block;
+}
+.ziele .zielWrapper {
+  text-align: center;
+  padding: 0.7rem;
+  display: inline-block;
+  margin: 1.5rem;
+}
+.ziele .zielWrapper .zielHead {
+  margin-top: 0;
+  border-radius: 20rem;
+  background-color: #c43426;
+  color: #fff;
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+.ziele .zielWrapper .zielHead.shorter {
+  line-height: 1.7rem;
+}
+.ziele .zielWrapper .zielBody {
+  padding: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+}
+.Divider {
+  width: 80%;
+  margin: 1rem 10%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #000;
+}
+.boardMembers .memberWrapper {
+  margin-top: 2rem;
+}
+.boardMembers .memberWrapper .memberImageWrapper {
+  position: relative;
+}
+.boardMembers .memberWrapper .memberImageWrapper .imageCutter {
+  position: absolute;
+  margin-top: -3.25rem;
+  top: 50%;
+  right: 0;
+  border-radius: 20rem;
+  height: 6.5rem;
+  width: 6.5rem;
+  overflow: hidden;
+}
+.boardMembers .memberWrapper .memberImageWrapper .imageCutter img {
+  width: 7rem;
+}
+.boardMembers .information {
+  padding: 1rem;
+  display: block;
+  line-height: 1.5rem;
+}
+.boardMembers .information .memberName {
+  font-weight: 500;
+}
+.boardMembers .information .mail {
+  padding-top: 0.5rem;
+}
+@media (min-width : 1500px) {
+  .ziele {
+    display: flex;
+  }
+  .ziele .zielWrapper .zielHead {
+    margin-top: 1.5rem;
   }
 }
 html {

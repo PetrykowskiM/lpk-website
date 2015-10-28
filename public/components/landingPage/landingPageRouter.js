@@ -42,7 +42,7 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             url: 'verein',
             views: {
                 'mainContent@home':{
-                    //controller: 'landingPageCtrl',
+                    controller: 'vereinCtrl',
                     templateUrl: 'components/verein/verein.html'
                 }
             }

@@ -1,6 +1,6 @@
 ba.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/aktuelles');
+    $urlRouterProvider.otherwise('/verein');
     
     $stateProvider
         
