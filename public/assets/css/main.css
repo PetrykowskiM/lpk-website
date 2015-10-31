@@ -584,7 +584,7 @@ md-content {
   }
   .ziele .zielWrapper .zielBody {
     padding: 1.5rem;
-    line-height: 3rem;
+    line-height: 4rem;
     font-size: 2.5rem;
   }
   .Divider {
@@ -600,10 +600,9 @@ md-content {
     position: relative;
   }
   .boardMembers .memberWrapper .memberImageWrapper .imageCutter {
-    margin-top: -3.25rem;
+    margin-top: -5.5rem;
     top: 50%;
     right: 0;
-    border-radius: 20rem;
     height: 11rem;
     width: 11rem;
   }
@@ -612,7 +611,7 @@ md-content {
   }
   .boardMembers .information {
     padding: 1rem;
-    line-height: 3rem;
+    line-height: 4rem;
   }
   .boardMembers .information .memberName {
     font-weight: 500;
