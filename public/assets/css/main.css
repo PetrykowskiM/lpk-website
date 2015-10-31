@@ -131,6 +131,7 @@ md-sidenav {
   height: 100%;
   background-image: url("/assets/img/sidenavBg.png");
   background-size: cover;
+  position: fixed;
 }
 md-sidenav .overlay {
   width: 100%;
@@ -142,7 +143,7 @@ md-sidenav .overlay {
 }
 .menu-button {
   background-color: #c43426 !important;
-  position: absolute;
+  position: fixed;
   top: 10;
   left: 10;
 }
@@ -410,8 +411,10 @@ md-content {
     padding-top: 0;
   }
   .contentContainer {
-    width: 90%;
+    height: 100%;
+    width: 100%;
     padding: 0;
+    padding-top: 0;
   }
   .contentContainer .titleWrapper {
     padding-left: 2rem;
@@ -562,6 +565,60 @@ md-content {
   }
   .ziele .zielWrapper .zielHead {
     margin-top: 1.5rem;
+  }
+}
+@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+  .ziele .zielWrapper {
+    padding: 0.7rem;
+    margin: 1.5rem;
+  }
+  .ziele .zielWrapper .zielHead {
+    margin-top: 0;
+    width: 9.5rem;
+    height: 9.5rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+  }
+  .ziele .zielWrapper .zielHead.shorter {
+    line-height: 4.5rem;
+  }
+  .ziele .zielWrapper .zielBody {
+    padding: 1.5rem;
+    line-height: 3rem;
+    font-size: 2.5rem;
+  }
+  .Divider {
+    font-size: 5rem;
+  }
+  .boardMembers {
+    font-size: 2.5rem;
+  }
+  .boardMembers .memberWrapper {
+    margin-top: 5rem;
+  }
+  .boardMembers .memberWrapper .memberImageWrapper {
+    position: relative;
+  }
+  .boardMembers .memberWrapper .memberImageWrapper .imageCutter {
+    margin-top: -3.25rem;
+    top: 50%;
+    right: 0;
+    border-radius: 20rem;
+    height: 11rem;
+    width: 11rem;
+  }
+  .boardMembers .memberWrapper .memberImageWrapper .imageCutter img {
+    width: 11rem;
+  }
+  .boardMembers .information {
+    padding: 1rem;
+    line-height: 3rem;
+  }
+  .boardMembers .information .memberName {
+    font-weight: 500;
+  }
+  .boardMembers .information .mail {
+    padding-top: 0.5rem;
   }
 }
 html {
