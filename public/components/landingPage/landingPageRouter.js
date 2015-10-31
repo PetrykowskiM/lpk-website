@@ -31,7 +31,7 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             url: 'aktivitaeten',
             views: {
                 'mainContent@home':{
-                    //controller: 'landingPageCtrl',
+                    controller: 'aktivitaetenCtrl',
                     templateUrl: 'components/aktivitaeten/aktivitaeten.html'
                 }
             }

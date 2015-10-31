@@ -1,1 +1,67 @@
-Aktivitaeten
+<div class="contentContainer">
+
+    <div class="generalActivities" layout="row" layout-wrap>
+
+        <div class="paragraphWrapper" flex-gt-lg="33" flex="100">
+
+            <div class="paragraphHeader">
+                Pressekonferenzen
+            </div>
+            <div class="paragraphContent">
+                Die Pressekonferenzen der Landespressekonferenz richten sich an Mitglieder unseres Vereins. Alle Inhalte der Pressekonferenz können umgehend veröffentlicht werden. Ziel ist es - insbesondere vor Landtagssitzungen - auch jenen ein Forum zu bieten, die sonst nicht zu Wort kommen.
+                <br><br>
+                Aber Pressekonferenzen sollen neben Briefings und Hintergrundrunden für uns nicht der einzige Ort der Begegnung sein. Alljährlich veranstalten wir daher unser Spargelessen und - solange es unser Finanzen zulassen - das Spätsommerfest der Landespressekonferenz.
+                <br><br>
+                Immer wieder beschäftigen uns Themen, über die wir mehr lesen und hören und sie nicht mit eigenen Augen sehen. Um einen Blick über den Tellerrand der Redaktion zu werfen, bieten wir in unregelmäßigen Abständen Arbeitsausflüge zu aktuellen Themen.
+            </div>
+
+        </div>
+
+        <div class="paragraphWrapper" flex-gt-lg="33" flex="100">
+
+            <div class="paragraphHeader">
+                Briefings
+            </div>
+            <div class="paragraphContent">
+
+                Nicht immer lassen sich alle Fragen innerhalb einer halben Stunde Pressekonferenz beantworten. Prall gefüllte Terminkalender von Politikern und Journalisten sind schlechte Rahmenbedingungen für einen gründlichen Informationsaustausch. Briefings sollen Politikern und Mitgliedern der LPK diesen Raum schaffen, um sich vor der offiziellen Veröffentlichung (z.B. auf einer Pressekonferenz) über ein komplexes Thema auszutauschen. Notizen und Infomaterialien sind erlaubt, es gilt aber eine Sperrfrist. Über das Ende der Sperrfrist entscheiden die jeweiligen Gesprächspartner, NICHT die anwesenden Journalisten.
+                Briefings organisieren wir auf Anfrage gerne.
+
+            </div>
+
+        </div>
+
+        <div class="paragraphWrapper" flex-gt-lg="33" flex="100">
+
+            <div class="paragraphHeader">
+                Hintergrundgespräche
+            </div>
+            <div class="paragraphContent">
+
+                Nicht alles, was gesagt wird, ist für die Öffentlichkeit bestimmt. Trotzdem wollen wir ein Forum bieten, in dem auch das Geheime, die Information „Unter Drei“ oder das Persönliche seinen Platz hat. In unregelmäßigen Abständen organisieren wir für unsere Mitglieder Hintergrundrunden, damit sie politische Lage und Personen besser ein- und abschätzen können. Wichtig ist uns die lockere Atmosphäre und die Möglichkeit zu diskutieren. Schreib- und Aufnahmegeräte müssen deshalb in den Taschen bleiben. Vertraulichkeit ist Pflicht.
+                Immer wieder bekommen wir auf diese Weise interessante Einblicke in das Innenleben von Parteien, Verwaltungsapparaten, Justiz oder gesellschaftliche Erscheinungen wie den Rechtsextremismus.
+                <br><br>
+                Über künftige Veranstaltungen informieren wir rechtzeitig per e-mail-Verteiler.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="newsCard md-whiteframe-2dp" ng-repeat="entry in aktivitaeten">
+
+        <div class="cardTitleWrapper">
+            <span class="cardTitle">{{entry.headline}}</span>
+        </div>
+        <div class="subtitleWrapper">
+            <span class="cardSubTitle">{{entry.subheadline}}</span>
+        </div>
+        <div class="cardContent">{{entry.content}}</div>
+        <div class="cardImages">
+            <img ng-repeat="image in entry.images" ng-src="{{image}}" class="newsImage md-whiteframe-3dp" ng-click="showImage($event, image, $parent.$index, $index)">
+        </div>
+    </div>
+
+
+</div>
