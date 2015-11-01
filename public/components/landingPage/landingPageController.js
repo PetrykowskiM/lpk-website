@@ -1,7 +1,6 @@
 var landingPage = angular.module('landingPage', ['intern'])
 
 landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', '$mdMedia','$state', function($scope, $interval, $mdSidenav, $mdMedia, $state){
-
     $scope.menuItems = {
         aktuelles: {
             state: "home.aktuelles",
@@ -57,12 +56,21 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
         $mdSidenav('left').toggle();
     };
 
+
+    $scope.isMobile = function(){
+        if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            return true
+        }else{
+            return false
+        }
+    }
+
     $scope.isSmall = function(){
-        return !$mdMedia('gt-lg')
+        return !$mdMedia('gt-md')
     }
 
     $scope.greaterSmall = function(){
-        return $mdMedia('gt-lg')
+        return $mdMedia('gt-md')
     }
 
     $scope.goTo = function(state, key, toggleMenu){
@@ -79,4 +87,8 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
             $scope.menuItems[key].selected = true
         }
     }
+
+
+    $scope.isMobile()
+
 }])

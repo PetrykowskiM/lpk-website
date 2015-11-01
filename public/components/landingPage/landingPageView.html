@@ -24,11 +24,11 @@
         </div>
     </md-sidenav>
     <md-content ng-cloak md-swipe-right="openLeftMenu()">
-        <md-button class="md-fab menu-button" ng-click="openLeftMenu()" ng-show="isSmall()">
+        <md-button class="md-fab menu-button" ng-click="openLeftMenu()" ng-show="isSmall() || isMobile()">
             <i class="fa fa-bars fa-2x"></i>
         </md-button>
 
-        <div class="topMenu" ng-show="greaterSmall()">
+        <div class="topMenu" ng-show="greaterSmall() && !isMobile()">
             <div class="contentWrapperTopNavigation">
 
                 <img class="lpkLogo" src="/assets/img/lpk_logo.png">

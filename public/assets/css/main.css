@@ -207,11 +207,13 @@ md-content {
   width: 10rem;
   float: right;
   margin-top: 1.5rem;
+  position: absolute;
+  right: 20%;
 }
 .topMenu .contentWrapperTopNavigation .navigationTop {
   background-color: rgba(25,25,25,0.55);
   display: inline-block;
-  margin-top: 7rem;
+  margin-top: 8.5rem;
   float: left;
   display: inline-flex;
 }
