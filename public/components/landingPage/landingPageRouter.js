@@ -53,7 +53,7 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             url: 'mitglied',
             views: {
                 'mainContent@home':{
-                    //controller: 'landingPageCtrl',
+                    controller: 'mitgliedCtrl',
                     templateUrl: 'components/mitglied/mitglied.html'
                 }
             }

@@ -26,6 +26,14 @@ intern.factory('lpk_admin', ['$http', '$rootScope', function($http, $rootScope){
 
         deleteEntry: function(entry){
             return $http.post('/entry/delete', entry)
+        },
+
+        login: function(token){
+            return $http.post("/login", {token: token})
+        },
+
+        loggedIn: function(){
+            return $http.get("/login")
         }
 
     }

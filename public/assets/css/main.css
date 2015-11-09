@@ -444,6 +444,7 @@ md-content {
   width: 80%;
   padding: 1rem;
   font-size: 1rem;
+  background-color: rgba(244,238,227,0.5);
 }
 .newsCard .cardTitleWrapper {
   padding-bottom: 1rem;
@@ -654,6 +655,13 @@ md-content {
     line-height: 4rem;
     font-size: 3rem;
   }
+}
+.linkStyle {
+  text-decoration: none;
+  color: #000;
+}
+button {
+  background-color: #c43426 !important;
 }
 html {
   height: 100%;

@@ -1,5 +1,16 @@
 <div class="contentContainer">
-Intern
 
-<button ng-click="login()">Login</button>
+    <div class="">
+        <md-input-container>
+            <label>Nutzer</label>
+            <input ng-model="user" type="text">
+        </md-input-container>
+        <md-input-container>
+            <label>Passwort</label>
+            <input ng-model="password" type="password">
+        </md-input-container>
+    </div>
+
+    <md-button class="md-raised md-primary" ng-click="login()">Login</md-button>
+
 </div>

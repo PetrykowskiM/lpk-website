@@ -5,6 +5,7 @@ var multipartMiddleware = multipart();
 var fs = require("fs");
 var mkdirp = require('mkdirp');
 
+
 module.exports = function(app) {
 
   /**
@@ -18,12 +19,32 @@ module.exports = function(app) {
 
     })
 
+
+  // Login User: Admin | Passwort: lpkAdmin2015
+  // Token: YWRtaW5scGtBZG1pbjIwMTU==
+  app.route("/login")
+      .get(function(req, res){
+          if(req.headers.auth == "YWRtaW5scGtBZG1pbjIwMTU="){
+              res.send(200)
+          }else{
+              res.send(401)
+          }
+      })
+      .post(function(req, res){
+          if(req.body.token == "YWRtaW5scGtBZG1pbjIwMTU="){
+              res.send(200)
+          }else{
+              res.send(401)
+          }
+      })
+
   /**
   * GET: redirect all requests with path not starting with api or # to the same link with #
   */
 
   app.route('/news')
       .get(function(req, res){
+          console.log(req.headers)
         db.getAllNews()
             .then(function(news){
               res.send(news)
@@ -200,7 +221,13 @@ module.exports = function(app) {
 }
 
 function isAuthenticated(req, res, next){
-  return next()
+
+  if(req.headers.auth == "YWRtaW5scGtBZG1pbjIwMTU="){
+      return next()
+  }else{
+      res.send(401)
+  }
+
 
   // if not: res.senStatus(401)
 }
