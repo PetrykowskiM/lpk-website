@@ -28,6 +28,18 @@ intern.factory('lpk_admin', ['$http', '$rootScope', function($http, $rootScope){
             return $http.post('/entry/delete', entry)
         },
 
+        updateDate: function(date){
+            return $http.post("/dates/update", date)
+        },
+
+        addDate: function(date){
+            return $http.post("/dates/add", date)
+        },
+
+        deleteDate: function(date){
+            return $http.post("/dates/delete", date)
+        },
+
         login: function(token){
             return $http.post("/login", {token: token})
         },

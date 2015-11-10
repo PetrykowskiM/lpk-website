@@ -31,6 +31,21 @@ landingPage.provider('lpk_dataProvider', function(){
             return deferred.promise
         }
 
+        this.getDates = function(){
+            var deferred = $q.defer()
+
+            $http.get('/dates', {})
+                .success(function (dates) {
+
+                    deferred.resolve(dates)
+                }, function (err) {
+                    console.log("could not load dates. Following error occured: \n", err)
+                    return {}
+                })
+
+            return deferred.promise
+        }
+
         this.getBoardMembers = function(){
             return [
                 {

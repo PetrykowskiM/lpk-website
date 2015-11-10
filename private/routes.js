@@ -44,7 +44,6 @@ module.exports = function(app) {
 
   app.route('/news')
       .get(function(req, res){
-          console.log(req.headers)
         db.getAllNews()
             .then(function(news){
               res.send(news)
@@ -81,6 +80,47 @@ module.exports = function(app) {
                   res.sendStatus(200)
               })
       })
+
+    app.route('/dates')
+        .get(function(req, res){
+            db.getAllDates()
+                .then(function(dates){
+                    res.send(dates)
+                })
+        })
+
+    app.route('/dates/add')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var dateEntry = req.body
+
+            db.addDate(dateEntry)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+        })
+
+    app.route('/dates/update')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var dateEntry = req.body
+
+            db.updateDate(dateEntry)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+        })
+
+    app.route('/dates/delete')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var dateEntry = req.body
+
+            db.deleteDate(dateEntry)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+        })
 
     app.route('/news/update')
         .all(isAuthenticated)

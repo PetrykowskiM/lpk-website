@@ -7,7 +7,8 @@ intern.controller("veranstaltungenCtrl", ["$scope", "$state", "lpk_dataProvider"
             content: "",
             date: new Date(),
             images: [],
-            custom: 0
+            custom: 0,
+            type: "event"
         }
 
         $scope.allEvents = []
@@ -42,6 +43,23 @@ intern.controller("veranstaltungenCtrl", ["$scope", "$state", "lpk_dataProvider"
         }
 
 
+        $scope.cancel = function(){
+            $scope.eventEntry = {
+                headline: "",
+                subheadline: "",
+                content: "",
+                date: new Date(),
+                images: [],
+                custom: 0
+            }
+            if(currentlyEditing){
+                $scope.allEvents[selectedEntry].date = $scope.allEvents[selectedEntry].date.getTime()
+                currentlyEditing = false
+                $scope.existingImages = []
+                selectedEntry = 0
+            }
+        }
+
         $scope.deleteFile = function(event, index){
             event.stopPropagation()
             flowModule.files.splice(index, 1)
@@ -67,7 +85,11 @@ intern.controller("veranstaltungenCtrl", ["$scope", "$state", "lpk_dataProvider"
                     var promises = []
 
                     //Delete all belonging images
-                    var images = JSON.parse($scope.allEvents[index].images)
+                    var images
+                    if(typeof $scope.allEvents[index].images == 'string')
+                        images = JSON.parse($scope.allEvents[index].images)
+                    else
+                        images = $scope.allEvents[index].images
                     for(var imageIndex in images){
                         promises.push(lpk_admin.deleteImage(images[imageIndex]))
                     }

@@ -17,7 +17,7 @@ db.serialize(function() {
 function setUpDatabase(){
     db.run("CREATE TABLE Entry (headline TEXT, subheadline TEXT, content TEXT, images TEXT, custom INTEGER, customHtml TEXT, type TEXT, date INTEGER)");
     db.run("CREATE TABLE BoardMember (name TEXT, imagePath TEXT, title TEXT, email TEXT, isLeader INTEGER)");
-    db.run("CREATE TABLE Event (place TEXT, title TEXT, date INTEGER)");
+    db.run("CREATE TABLE Event (place TEXT, title TEXT, description TEXT, date INTEGER)");
 }
 
 exports.addEntry = function(entry){
@@ -86,6 +86,23 @@ exports.getAllNews = function(){
     return deferred.promise
 }
 
+exports.getAllDates = function(){
+    var deferred = q.defer()
+
+    db.serialize(function() {
+        //var news = []
+        db.all("SELECT * FROM Event", function(err, rows) {
+
+            deferred.resolve(rows)
+
+        });
+
+
+    });
+
+    return deferred.promise
+}
+
 exports.getAllEvents = function(){
     var deferred = q.defer()
 
@@ -114,5 +131,54 @@ exports.addEvent = function(event){
         ")")
 
     });
+
+}
+
+exports.addDate = function(date){
+    var deferred = q.defer()
+
+    db.serialize(function() {
+
+        var stmt = db.prepare("INSERT INTO Event (place, title, description, date) VALUES  (?,?,?,?)")
+
+        stmt.run(date.place, date.title,date.description, date.date)
+
+        deferred.resolve()
+    });
+
+    return deferred.promise
+
+}
+
+exports.deleteDate = function(date){
+    var deferred = q.defer()
+
+    db.serialize(function() {
+        //var news = []
+        var stmt = db.prepare("DELETE FROM Event WHERE date=? ")
+
+        stmt.run(date.date)
+
+        deferred.resolve()
+
+
+    });
+
+    return deferred.promise
+}
+
+exports.updateDate = function(date){
+    var deferred = q.defer()
+
+    db.serialize(function() {
+
+        var stmt = db.prepare("UPDATE Event SET place=?, title=?, description=?, date=? WHERE date=? ")
+
+        stmt.run(date.place, date.title, date.description, date.date, date.oldDate)
+
+        deferred.resolve()
+    });
+
+    return deferred.promise
 
 }

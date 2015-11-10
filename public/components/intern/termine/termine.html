@@ -1,1 +1,36 @@
-Termine
+<div class="adminPanel">
+    <md-input-container flex>
+        <label>Titel</label>
+        <input ng-model="currentDate.title">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Ort</label>
+        <input ng-model="currentDate.place">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Beschreibung</label>
+        <textarea ng-model="currentDate.description" columns="1"></textarea>
+    </md-input-container>
+
+    <md-datepicker class="left" ng-model="currentDate.date" md-placeholder="Datum" flex="50"></md-datepicker>
+    <md-button class="md-raised md-primary saveButton dividingMargin standardButton" flex="25" ng-click="save()">Speichern</md-button>
+    <md-button class="md-raised md-primary saveButton dividingMargin standardButton" flex="25" ng-click="cancel()">Abbrechen</md-button>
+
+
+
+    <md-toolbar class="md-theme-light primaryBg">
+        <h2 class="md-toolbar-tools">
+            <span>Alle Einträge</span>
+        </h2>
+    </md-toolbar>
+
+    <div class="entryWrapper">
+        <div ng-repeat="date in allDates | orderBy:'date'" class="adminNewsItem" ng-click="selectedEntry($index)">
+            <span class="date" >{{date.date | date: 'dd.MM.yy'}}</span>
+            <span class="title">{{date.title}}</span>
+            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteDate($index, $event)">
+                <i class="fa fa-trash-o fa-2x"></i>
+            </md-button>
+        </div>
+    </div>
+</div>

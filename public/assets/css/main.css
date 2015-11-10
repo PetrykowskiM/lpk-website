@@ -297,10 +297,12 @@ md-input-container label {
   text-align: left;
 }
 md-pagination-wrapper {
-  background-color: #3f51b5;
+  background-color: #c43426;
+/*background-color rgb(63,81,181)*/
 }
 md-tabs-canvas {
-  background-color: #3f51b5;
+  background-color: #c43426;
+/*background-color rgb(63,81,181)*/
 }
 md-ink-bar {
   background-color: #000 !important;
@@ -331,7 +333,7 @@ md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > m
   float: right;
 }
 .imageDropField {
-  border: 5px dashed #3f51b5;
+  border: 5px dashed #c43426;
   padding: 1rem;
   margin-bottom: 2rem;
   cursor: pointer;
@@ -660,7 +662,10 @@ md-content {
   text-decoration: none;
   color: #000;
 }
-button {
+.standardButton {
+  background-color: #c43426 !important;
+}
+.primaryBg {
   background-color: #c43426 !important;
 }
 html {
