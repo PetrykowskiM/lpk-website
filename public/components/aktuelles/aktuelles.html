@@ -1,5 +1,5 @@
 <div class="contentContainer cardWrapper">
-    <div class="newsCard md-whiteframe-2dp" ng-repeat="entry in allNews | orderBy:'date'">
+    <div class="newsCard md-whiteframe-2dp" ng-repeat="entry in allNews | orderBy:'-date'">
 
         <div class="cardTitleWrapper">
             <span class="cardTitle">{{entry.headline}}</span>
