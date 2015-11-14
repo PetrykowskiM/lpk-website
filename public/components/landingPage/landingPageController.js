@@ -22,9 +22,9 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
             text: "Verein",
             selected: false
         },
-        mitglied: {
-            state: "home.mitglied",
-            text: "Mitglied",
+        vorstand: {
+            state: "home.vorstand",
+            text: "Vorstand",
             selected: false
         }
     }
@@ -43,8 +43,8 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
         case "home.verein":
             $scope.menuItems.verein.selected = true
             break;
-        case "home.mitglied":
-            $scope.menuItems.mitglied.selected = true
+        case "home.vorstand":
+            $scope.menuItems.vorstand.selected = true
             break;
         case "home":
             $state.go("home.aktuelles")
@@ -89,6 +89,6 @@ landingPage.controller("landingPageCtrl", ['$scope', '$interval', '$mdSidenav', 
     }
 
 
-    $scope.isMobile()
+    //$scope.isMobile()
 
 }])

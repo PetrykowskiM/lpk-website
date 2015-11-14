@@ -1,0 +1,24 @@
+<div class="contentContainer">
+    <div class="boardMembers" layout="row" layout-wrap>
+
+        <div class="memberWrapper" ng-repeat="member in boardMembers" flex-gt-lg="50" flex="100" layout="row">
+            <div class="memberImageWrapper" flex="30" flex-gt-lg="40" >
+                <div class="imageCutter">
+                    <img ng-src="{{member.image}}" ng-if="member.image != ''">
+                    <img src="/assets/img/Boardmembers/portrait_placeholder.png" ng-if="member.image == ''">
+                </div>
+            </div>
+            <div class="information" flex="70" flex-gt-lg="60" >
+                <div class="memberName">
+                    <span class="vorsitzender" ng-if="member.isLeader">Vorsitzender </span>{{member.name}}
+                </div>
+                <div class="publisher">{{member.publisher}}</div>
+                <div class="mail">{{member.mail}}</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="centerButton">
+        <md-button class="md-raised md-primary standardButton" ng-click="satzung()">Satzung herunterladen</md-button>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+.terminEntry
+  display flex
+  margin-top 2rem
+  position relative
+  margin-left auto
+  margin-right auto
+
+  .terminTimePlace
+    display inline-block
+    text-align right
+    padding-right 2rem
+    width 20%
+
+    .terminDate
+      font-weight 500
+
+    .terminPlace
+      color black
+
+  .terminDivider
+    position absolute
+    top 50%
+    background-color secondaryColor
+    width 1rem
+    height 1rem
+    border-radius 20rem
+    margin-top -0.5rem
+
+  .terminContent
+    padding-left 2.5rem
+
+    .terminTitle
+      font-size 1.4rem
+
+    .terminDescription
+      margin-top 0.3rem
+
+/*Iphone*/
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),
+                        (min-device-width : 320px)  and (max-device-width : 568px),
+                        (min-device-width : 320px)  and (max-device-width : 480px)
+
+  .terminEntry
+    margin-top 4rem
+    font-size 4rem
+
+    .terminTimePlace
+      text-align left
+      padding-bottom 2rem
+      padding-left 2.5rem
+
+      .terminDate
+        font-weight 500
+
+      .terminPlace
+        color black
+
+    .terminDivider
+      display none
+
+    .terminContent
+
+      .terminTitle
+        font-size 4.5rem
+        color secondaryColor
+
+      .terminDescription
+        margin-top 0.3rem

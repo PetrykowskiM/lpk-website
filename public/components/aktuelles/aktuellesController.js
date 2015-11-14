@@ -11,6 +11,13 @@ landingPage.controller("aktuellesCtrl", ["$scope", "$state", 'lpk_dataProvider',
             console.log(news)
         })
 
+    lpkData.getEvents()
+        .then(function(events){
+            for(var i = 0; i<events.length; i++){
+                events[i].images = JSON.parse(events[i].images)
+            }
+            $scope.allNews = $scope.allNews.concat(events)
+        })
 
     $scope.showImage = function(ev, imagePath, newsIndex, imageIndex){
         console.log(newsIndex, imageIndex)

@@ -20,7 +20,7 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
             url: 'termine',
             views: {
                 'mainContent@home':{
-                    //controller: 'landingPageCtrl',
+                    controller: 'dateCtrl',
                     templateUrl: 'components/termine/termine.html'
                 }
             }
@@ -55,6 +55,17 @@ landingPage.config(function($stateProvider, $urlRouterProvider) {
                 'mainContent@home':{
                     controller: 'mitgliedCtrl',
                     templateUrl: 'components/mitglied/mitglied.html'
+                }
+            }
+
+        })
+
+        .state('home.vorstand', {
+            url: 'vorstand',
+            views: {
+                'mainContent@home':{
+                    controller: 'vorstandCtrl',
+                    templateUrl: 'components/vorstand/vorstandView.html'
                 }
             }
 

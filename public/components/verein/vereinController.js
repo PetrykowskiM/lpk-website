@@ -1,4 +1,4 @@
-landingPage.controller("vereinCtrl", ['$scope', 'lpk_dataProvider', function($scope, lpkData){
+landingPage.controller("vereinCtrl", ['$scope', 'lpk_dataProvider', '$state', function($scope, lpkData, $state){
     $scope.ziele = [
         {
             head: "Wir blicken durch",
@@ -16,6 +16,12 @@ landingPage.controller("vereinCtrl", ['$scope', 'lpk_dataProvider', function($sc
 
     ]
 
-    $scope.boardMembers = lpkData.getBoardMembers()
+    $scope.bestellen = function(){
+        window.open('/assets/files/aufnahmeantrag.pdf', '_blank')
+    }
+
+    $scope.mitgliedWerden = function(){
+        $state.go("home.mitglied")
+    }
 
 }])

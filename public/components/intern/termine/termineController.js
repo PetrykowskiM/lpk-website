@@ -15,9 +15,19 @@ intern.controller("termineCtrl", ["$scope", "$state", "lpk_dataProvider", "$mdTo
     data.getDates()
         .then(function(dates){
             $scope.allDates = dates
+            console.log(dates)
         })
 
-    $scope.selectedEntry = function(index){
+    function getIndex(date){
+        for(var i=0; i<$scope.allDates.length; i++){
+            if(date == $scope.allDates[i])
+                return i
+        }
+        return -1
+    }
+
+    $scope.selectedEntry = function(object){
+        var index = getIndex(object)
         if(!currentlyEditing) {
             currentlyEditing = true
             selectedEntry = index

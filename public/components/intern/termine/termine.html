@@ -25,7 +25,7 @@
     </md-toolbar>
 
     <div class="entryWrapper">
-        <div ng-repeat="date in allDates | orderBy:'date'" class="adminNewsItem" ng-click="selectedEntry($index)">
+        <div ng-repeat="date in allDates | orderBy:'date'" class="adminNewsItem" ng-click="selectedEntry(date)">
             <span class="date" >{{date.date | date: 'dd.MM.yy'}}</span>
             <span class="title">{{date.title}}</span>
             <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteDate($index, $event)">

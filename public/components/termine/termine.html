@@ -1,1 +1,22 @@
-Termine
+<div class="contentContainer">
+
+    <div class="terminEntry" ng-repeat="termin in allDates | orderBy:'date'" layout="row" layout-wrap>
+
+        <div class="terminTimePlace" flex="100" flex-gt-lg="30">
+            <div class="terminDate">
+                {{termin.date | date:'dd. MMMM yy'}}
+            </div>
+            <div class="terminPlace">
+                {{termin.place}}
+            </div>
+        </div>
+
+        <div class="terminDivider"></div>
+
+        <div class="terminContent" flex="80" flex-gt-lg="60">
+            <div class="terminTitle">{{termin.title}}</div>
+            <div class="terminDescription">{{termin.description}}</div>
+        </div>
+    </div>
+
+</div>

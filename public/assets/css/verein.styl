@@ -26,6 +26,11 @@
       line-height 1.5rem
       font-size 0.9rem
 
+.centerButton
+  text-align: center
+
+  
+
 .Divider
   width 80%
   margin 1rem 10%
@@ -78,7 +83,13 @@
 
 
 /*Iphone*/
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px)
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),
+                        (min-device-width : 320px)  and (max-device-width : 568px),
+                        (min-device-width : 320px)  and (max-device-width : 480px)
+
+  .standardButton
+    font-size 3rem
+    padding 1rem
 
   .ziele
 

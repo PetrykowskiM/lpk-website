@@ -198,6 +198,7 @@ md-content {
   background-image: url("/assets/img/nav_vertical.jpeg");
   background-size: cover;
   position: fixed;
+  z-index: 100;
 }
 .topMenu .contentWrapperTopNavigation {
   padding: 0 20%;
@@ -241,7 +242,7 @@ md-content {
   color: #c43426;
   cursor: pointer;
 }
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   body {
     font-size: 1rem;
   }
@@ -391,6 +392,7 @@ md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > m
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 15rem;
+  position: relative;
 }
 .contentContainer .titleWrapper {
   padding-top: 1rem;
@@ -408,7 +410,7 @@ md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > m
 md-content {
   width: 100%;
 }
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .mainContent {
     height: auto;
     margin-top: 10rem;
@@ -446,7 +448,7 @@ md-content {
   width: 80%;
   padding: 1rem;
   font-size: 1rem;
-  background-color: rgba(244,238,227,0.5);
+/*background-color rgba(244, 238, 227, 0.5)*/
 }
 .newsCard .cardTitleWrapper {
   padding-bottom: 1rem;
@@ -455,6 +457,9 @@ md-content {
   color: #c43426;
   font-weight: 500;
   font-size: 1.3rem;
+}
+.newsCard .cardTitleWrapper .cardDate {
+  float: right;
 }
 .newsCard .subtitleWrapper {
   padding-bottom: 1.2rem;
@@ -475,7 +480,7 @@ md-content {
 .newsCard .cardImages:hover {
   cursor: pointer;
 }
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .newsCard {
     margin: 1rem 7%;
     width: 100%;
@@ -525,6 +530,9 @@ md-content {
   line-height: 1.5rem;
   font-size: 0.9rem;
 }
+.centerButton {
+  text-align: center;
+}
 .Divider {
   width: 80%;
   margin: 1rem 10%;
@@ -572,7 +580,11 @@ md-content {
     margin-top: 1.5rem;
   }
 }
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
+  .standardButton {
+    font-size: 3rem;
+    padding: 1rem;
+  }
   .ziele .zielWrapper {
     padding: 0.7rem;
     margin: 1.5rem;
@@ -642,7 +654,7 @@ md-content {
 .generalActivities {
   margin-bottom: 2rem;
 }
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) {
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .paragraphWrapper {
     text-align: center;
     margin: 2rem 8%;
@@ -658,6 +670,70 @@ md-content {
     font-size: 3rem;
   }
 }
+.terminEntry {
+  display: flex;
+  margin-top: 2rem;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.terminEntry .terminTimePlace {
+  display: inline-block;
+  text-align: right;
+  padding-right: 2rem;
+  width: 20%;
+}
+.terminEntry .terminTimePlace .terminDate {
+  font-weight: 500;
+}
+.terminEntry .terminTimePlace .terminPlace {
+  color: #000;
+}
+.terminEntry .terminDivider {
+  position: absolute;
+  top: 50%;
+  background-color: #c43426;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 20rem;
+  margin-top: -0.5rem;
+}
+.terminEntry .terminContent {
+  padding-left: 2.5rem;
+}
+.terminEntry .terminContent .terminTitle {
+  font-size: 1.4rem;
+}
+.terminEntry .terminContent .terminDescription {
+  margin-top: 0.3rem;
+}
+@media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
+  .terminEntry {
+    margin-top: 4rem;
+    font-size: 4rem;
+  }
+  .terminEntry .terminTimePlace {
+    text-align: left;
+    padding-bottom: 2rem;
+    padding-left: 2.5rem;
+  }
+  .terminEntry .terminTimePlace .terminDate {
+    font-weight: 500;
+  }
+  .terminEntry .terminTimePlace .terminPlace {
+    color: #000;
+  }
+  .terminEntry .terminDivider {
+    display: none;
+  }
+  .terminEntry .terminContent .terminTitle {
+    font-size: 4.5rem;
+    color: #c43426;
+  }
+  .terminEntry .terminContent .terminDescription {
+    margin-top: 0.3rem;
+  }
+}
 .linkStyle {
   text-decoration: none;
   color: #000;
@@ -667,6 +743,9 @@ md-content {
 }
 .primaryBg {
   background-color: #c43426 !important;
+}
+.md-dialog-container {
+  z-index: 200;
 }
 html {
   height: 100%;
