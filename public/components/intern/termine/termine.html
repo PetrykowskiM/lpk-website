@@ -28,7 +28,7 @@
         <div ng-repeat="date in allDates | orderBy:'date'" class="adminNewsItem" ng-click="selectedEntry(date)">
             <span class="date" >{{date.date | date: 'dd.MM.yy'}}</span>
             <span class="title">{{date.title}}</span>
-            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteDate($index, $event)">
+            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteDate(date, $event)">
                 <i class="fa fa-trash-o fa-2x"></i>
             </md-button>
         </div>

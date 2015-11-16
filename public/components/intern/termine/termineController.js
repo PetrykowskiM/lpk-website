@@ -56,8 +56,9 @@ intern.controller("termineCtrl", ["$scope", "$state", "lpk_dataProvider", "$mdTo
         }
     }
 
-    $scope.deleteDate = function(index, event){
+    $scope.deleteDate = function(object, event){
         event.stopPropagation()
+        var index = getIndex(object)
 
         lpk_admin.deleteDate($scope.allDates[index])
             .then(function(){

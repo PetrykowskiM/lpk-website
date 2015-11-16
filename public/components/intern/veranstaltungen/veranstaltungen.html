@@ -49,10 +49,10 @@
     </md-toolbar>
 
     <div class="entryWrapper">
-        <div ng-repeat="entry in allEvents | orderBy:'date'" class="adminNewsItem" ng-click="selectedEntry($index)">
+        <div ng-repeat="entry in allEvents | orderBy:'date'" class="adminNewsItem" ng-click="selectedEntry(entry)">
             <span class="date" >{{entry.date | date: 'dd.MM.yy'}}</span>
             <span class="title">{{entry.headline}}</span>
-            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteEntry($index, $event)">
+            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteEntry(entry, $event)">
                 <i class="fa fa-trash-o fa-2x"></i>
             </md-button>
         </div>

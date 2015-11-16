@@ -23,7 +23,16 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
             $scope.allNews = news
         })
 
-    $scope.selectedEntry = function(index){
+    function getIndex(object){
+        for(var i=0; i<$scope.allNews.length; i++){
+            if(object == $scope.allNews[i])
+                return i
+        }
+        return -1
+    }
+
+    $scope.selectedEntry = function(object){
+        var index = getIndex(object)
         if(!currentlyEditing) {
             currentlyEditing = true
             selectedEntry = index
@@ -78,8 +87,9 @@ intern.controller("neuigkeitenCtrl", ["$scope", "$state", "lpk_dataProvider", "$
             })
     }
 
-    $scope.deleteEntry = function(index, event){
+    $scope.deleteEntry = function(object, event){
         event.stopPropagation()
+        var index = getIndex(object)
 
         lpk_admin.deleteEntry($scope.allNews[index])
             .then(function(){

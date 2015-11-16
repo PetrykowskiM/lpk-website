@@ -23,7 +23,16 @@ intern.controller("veranstaltungenCtrl", ["$scope", "$state", "lpk_dataProvider"
                 $scope.allEvents = events
             })
 
-        $scope.selectedEntry = function(index){
+        function getIndex(object) {
+            for (var i = 0; i < $scope.allEvents.length; i++) {
+                if (object == $scope.allEvents[i])
+                    return i
+            }
+            return -1
+        }
+
+        $scope.selectedEntry = function(object){
+            var index = getIndex(object)
             if(!currentlyEditing) {
                 currentlyEditing = true
                 selectedEntry = index
@@ -77,8 +86,9 @@ intern.controller("veranstaltungenCtrl", ["$scope", "$state", "lpk_dataProvider"
                 })
         }
 
-        $scope.deleteEntry = function(index, event){
+        $scope.deleteEntry = function(object, event){
             event.stopPropagation()
+            var index = getIndex(object)
 
             lpk_admin.deleteEntry($scope.allEvents[index])
                 .then(function(){
