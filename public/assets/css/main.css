@@ -660,7 +660,7 @@ md-content {
     margin: 2rem 8%;
   }
   .paragraphWrapper .paragraphHeader {
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     font-size: 3.5rem;
     margin: 3rem 0;
   }
@@ -710,10 +710,10 @@ md-content {
 @media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .terminEntry {
     margin-top: 4rem;
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .terminEntry .terminTimePlace {
-    text-align: left;
+    text-align: center;
     padding-bottom: 2rem;
     padding-left: 2.5rem;
   }
@@ -726,12 +726,19 @@ md-content {
   .terminEntry .terminDivider {
     display: none;
   }
+  .terminEntry .terminContent {
+    font-size: 3rem;
+    display: inline-block;
+    padding-right: 2.5rem;
+  }
   .terminEntry .terminContent .terminTitle {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     color: #c43426;
   }
   .terminEntry .terminContent .terminDescription {
     margin-top: 0.3rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #c43426;
   }
 }
 .linkStyle {
