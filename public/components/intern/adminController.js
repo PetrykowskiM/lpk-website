@@ -25,7 +25,14 @@ intern.controller("adminCtrl", ["$scope", "$state", function($scope, $state){
             case 'Veranstaltungen':
                 $state.go("intern.veranstaltungen")
                 break;
+            case 'Home':
+                $state.go("home.verein")
+                break;
             default: break;
         }
+    }
+
+    $scope.goHome = function(){
+        $state.go("home.verein")
     }
 }])

@@ -3,7 +3,7 @@ landingPage.controller("vorstandCtrl", ["$scope", "lpk_dataProvider", function($
     $scope.boardMembers = lpkData.getBoardMembers()
 
     $scope.satzung = function(){
-        window.open('/assets/files/aufnahmeantrag.pdf', '_blank')
+        window.open('/assets/files/Satzung_lpk-bb.pdf', '_blank')
     }
 
 }])

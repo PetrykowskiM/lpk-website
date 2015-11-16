@@ -60,7 +60,7 @@ landingPage.provider('lpk_dataProvider', function(){
                     isLeader: false,
                     publisher: "ZDF",
                     mail: "g.krueger@lpk-brandenburg.de",
-                    image: ""
+                    image: "/assets/img/Boardmembers/gunnar_krueger.jpg"
                 },
                 {
                     name: "Amelie Ernst",
