@@ -28,6 +28,10 @@ intern.controller("adminCtrl", ["$scope", "$state", function($scope, $state){
             case 'Home':
                 $state.go("home.verein")
                 break;
+            case 'Logout':
+                window.localStorage.removeItem("authToken")
+                $state.go("home.verein")
+                break;
             default: break;
         }
     }
