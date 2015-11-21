@@ -32,4 +32,14 @@ intern.config(function($stateProvider, $urlRouterProvider) {
             }
 
         })
+
+        .state('intern.vorstand', {
+            views: {
+                'events@intern':{
+                    controller: 'adminVorstandCtrl',
+                    templateUrl: 'components/intern/vorstand/vorstandView.html'
+                }
+            }
+
+        })
 });

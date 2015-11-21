@@ -1,9 +1,12 @@
 landingPage.controller("vorstandCtrl", ["$scope", "lpk_dataProvider", function($scope, lpkData){
 
-    $scope.boardMembers = lpkData.getBoardMembers()
+    $scope.boardMembers = []
 
-    $scope.satzung = function(){
-        window.open('/assets/files/Satzung_lpk-bb.pdf', '_blank')
-    }
+        lpkData.getBoard()
+        .then(function(member){
+            $scope.boardMembers = member
+        })
+
+
 
 }])

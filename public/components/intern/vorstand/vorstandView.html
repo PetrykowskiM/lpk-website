@@ -1,0 +1,62 @@
+<div class="adminPanel">
+    <md-input-container flex>
+        <label>Name</label>
+        <input ng-model="vorstand.name">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Agentur</label>
+        <input ng-model="vorstand.title">
+    </md-input-container>
+    <md-input-container flex>
+        <label>E-Mail</label>
+        <input ng-model="vorstand.email">
+    </md-input-container>
+    <md-checkbox
+            ng-model="vorstand.isLeader"
+            class="md-warn md-align-top-left">
+        Vorsitzender
+    </md-checkbox>
+    <div flow-init="{target: '/uploadImage'}"
+         flow-file-added="fileAdded( $file, $event, $flow )"
+         flow-drop class="imageDropField" flow-btn>
+        <span ng-show="$flow.files.length == 0 && existingImages.length == 0">Hier klicken oder Bild hierhin ziehen</span>
+        <div ng-repeat="img in $flow.files" class="imagePreview md-whiteframe-4dp" ng-click="deleteFile($event, $index)">
+            <img  flow-img="img" />
+            <div class="imageDarken">
+
+            </div>
+            <div class="icon">
+                <i class="fa fa-trash-o fa-2x"></i>
+            </div>
+        </div>
+        <!--Already uploaded Images-->
+        <div ng-repeat="img in existingImages" class="imagePreview md-whiteframe-4dp" ng-click="deleteFileExisting($event, $index)">
+            <img  ng-src="{{img}}" />
+            <div class="imageDarken">
+
+            </div>
+            <div class="icon">
+                <i class="fa fa-trash-o fa-2x"></i>
+            </div>
+        </div>
+    </div>
+    <md-button class="md-raised md-primary saveButton dividingMargin standardButton" flex="25" ng-click="save()">Speichern</md-button>
+    <md-button class="md-raised md-primary saveButton dividingMargin standardButton" flex="25" ng-click="cancel()">Abbrechen</md-button>
+
+
+
+    <md-toolbar class="md-theme-light primaryBg">
+        <h2 class="md-toolbar-tools">
+            <span>Alle Einträge</span>
+        </h2>
+    </md-toolbar>
+
+    <div class="entryWrapper">
+        <div ng-repeat="member in board | orderBy:'name'" class="adminNewsItem" ng-click="selectedEntry(member)">
+            <span class="date" >{{member.name}}</span>
+            <md-button class="md-icon-button deleteButton" aria-label="Delete" ng-click="deleteEntry(member, $event)">
+                <i class="fa fa-trash-o fa-2x"></i>
+            </md-button>
+        </div>
+    </div>
+</div>

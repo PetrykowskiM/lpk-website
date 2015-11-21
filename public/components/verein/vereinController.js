@@ -24,4 +24,8 @@ landingPage.controller("vereinCtrl", ['$scope', 'lpk_dataProvider', '$state', fu
         $state.go("home.mitglied")
     }
 
+    $scope.satzung = function(){
+        window.open('/assets/files/Satzung_lpk-bb.pdf', '_blank')
+    }
+
 }])

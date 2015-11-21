@@ -12,6 +12,9 @@ intern.controller("adminCtrl", ["$scope", "$state", function($scope, $state){
         case 'intern.veranstaltungen':
             $scope.selectedIndex = 2
             break;
+        case 'intern.vorstand':
+            $scope.selectedIndex = 3
+            break;
     }
 
     $scope.selected = function(tab){
@@ -27,6 +30,9 @@ intern.controller("adminCtrl", ["$scope", "$state", function($scope, $state){
                 break;
             case 'Home':
                 $state.go("home.verein")
+                break;
+            case 'Vorstand':
+                $state.go("intern.vorstand")
                 break;
             case 'Logout':
                 window.localStorage.removeItem("authToken")

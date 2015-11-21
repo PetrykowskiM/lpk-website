@@ -81,6 +81,48 @@ module.exports = function(app) {
               })
       })
 
+
+    app.route('/board')
+        .get(function(req, res){
+            db.getBoard()
+                .then(function(news){
+                    res.send(news)
+                })
+        })
+
+    app.route('/board/delete')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var boardMember = req.body
+
+            db.deleteBoardMember(boardMember)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+        })
+
+    app.route('/board/update')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var boardMember = req.body
+
+            db.updateBoardMember(boardMember)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+        })
+
+    app.route('/board/add')
+        .all(isAuthenticated)
+        .post(function(req, res){
+            var boardMember = req.body
+
+            db.addBoardMember(boardMember)
+                .then(function(){
+                    res.sendStatus(200)
+                })
+        })
+
     app.route('/dates')
         .get(function(req, res){
             db.getAllDates()

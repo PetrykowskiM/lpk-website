@@ -1,4 +1,4 @@
-landingPage.controller("aktuellesCtrl", ["$scope", "$state", 'lpk_dataProvider','$mdDialog', function($scope, $state, lpkData, $mdDialog){
+landingPage.controller("aktuellesCtrl", ["$scope", "$state", 'lpk_dataProvider','$mdDialog','$sce', function($scope, $state, lpkData, $mdDialog, $sce){
 
     $scope.allNews = []
 
@@ -6,6 +6,8 @@ landingPage.controller("aktuellesCtrl", ["$scope", "$state", 'lpk_dataProvider',
         .then(function(news){
             for(var i = 0; i<news.length; i++){
                 news[i].images = JSON.parse(news[i].images)
+                news[i].content = news[i].content.replace(/\n/g, '<br>')
+                news[i].contentSafe = $sce.trustAsHtml(news[i].content)
             }
             $scope.allNews = news
             console.log(news)
@@ -15,6 +17,8 @@ landingPage.controller("aktuellesCtrl", ["$scope", "$state", 'lpk_dataProvider',
         .then(function(events){
             for(var i = 0; i<events.length; i++){
                 events[i].images = JSON.parse(events[i].images)
+                events[i].content = events[i].content.replace(/\n/g, '<br>')
+                events[i].contentSafe = $sce.trustAsHtml(events[i].content)
             }
             $scope.allNews = $scope.allNews.concat(events)
         })

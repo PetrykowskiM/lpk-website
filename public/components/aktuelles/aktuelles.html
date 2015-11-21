@@ -8,7 +8,7 @@
         <div class="subtitleWrapper">
             <span class="cardSubTitle">{{entry.subheadline}}</span>
         </div>
-        <div class="cardContent">{{entry.content}}</div>
+        <div class="cardContent" ng-bind-html="entry.contentSafe"></div>
         <div class="cardImages">
             <img ng-repeat="image in entry.images" ng-src="{{image}}" class="newsImage md-whiteframe-3dp" ng-click="showImage($event, image, $parent.$index, $index)">
         </div>

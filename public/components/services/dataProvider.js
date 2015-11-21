@@ -46,6 +46,21 @@ landingPage.provider('lpk_dataProvider', function(){
             return deferred.promise
         }
 
+        this.getBoard = function(){
+            var deferred = $q.defer()
+
+            $http.get("/board", {})
+                .success(function (board) {
+
+                    deferred.resolve(board)
+                }, function (err) {
+                    console.log("could not load board. Following error occured: \n", err)
+                    deferred.resolve([])
+                })
+
+            return deferred.promise
+        }
+
         this.getBoardMembers = function(){
             return [
                 {

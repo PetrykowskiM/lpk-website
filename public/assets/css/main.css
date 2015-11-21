@@ -147,6 +147,11 @@ md-sidenav .overlay {
   top: 10;
   left: 10;
 }
+.mobileTitle {
+  position: fixed;
+  top: 10;
+  right: 20;
+}
 md-content {
   overflow: inherit;
 }
@@ -251,6 +256,11 @@ md-content {
     height: 9rem !important;
     font-size: 2rem !important;
   }
+  .mobileTitle {
+    font-size: 3rem;
+    margin-top: 3rem;
+    background-color: #fff;
+  }
   md-sidenav {
     min-width: 70%;
     max-width: 70%;
@@ -296,6 +306,10 @@ md-content {
 }
 md-input-container label {
   text-align: left;
+}
+md-checkbox {
+  text-align: left !important;
+  margin-bottom: 1rem !important;
 }
 md-pagination-wrapper {
   background-color: #c43426;
@@ -572,6 +586,10 @@ md-content {
 .boardMembers .information .mail {
   padding-top: 0.5rem;
 }
+.boardMembers .information .mail a {
+  text-decoration: none;
+  color: #000;
+}
 @media (min-width : 1500px) {
   .ziele {
     display: flex;
@@ -672,16 +690,18 @@ md-content {
 }
 .terminEntry {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1rem;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
 .terminEntry .terminTimePlace {
   display: inline-block;
-  text-align: right;
-  padding-right: 2rem;
-  width: 20%;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 .terminEntry .terminTimePlace .terminDate {
   font-weight: 500;
@@ -690,19 +710,16 @@ md-content {
   color: #000;
 }
 .terminEntry .terminDivider {
-  position: absolute;
-  top: 50%;
+  position: relative;
   background-color: #c43426;
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 20rem;
-  margin-top: -0.5rem;
-}
-.terminEntry .terminContent {
-  padding-left: 2.5rem;
+  margin: 1.5rem auto;
 }
 .terminEntry .terminContent .terminTitle {
   font-size: 1.4rem;
+  color: #c43426;
 }
 .terminEntry .terminContent .terminDescription {
   margin-top: 0.3rem;
