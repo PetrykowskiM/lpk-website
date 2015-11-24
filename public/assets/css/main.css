@@ -148,9 +148,7 @@ md-sidenav .overlay {
   left: 10;
 }
 .mobileTitle {
-  position: fixed;
-  top: 10;
-  right: 20;
+  position: relative;
 }
 md-content {
   overflow: inherit;
@@ -258,7 +256,8 @@ md-content {
   }
   .mobileTitle {
     font-size: 3rem;
-    margin-top: 3rem;
+    font-weight: 700;
+    margin-top: 4rem !important;
     background-color: #fff;
   }
   md-sidenav {
@@ -485,6 +484,7 @@ md-content {
 .newsCard .cardImages {
   padding-top: 0.5rem;
   display: flex;
+  padding-bottom: 0.5rem;
 }
 .newsCard .cardImages .newsImage {
   height: 6rem;
@@ -493,6 +493,9 @@ md-content {
 }
 .newsCard .cardImages:hover {
   cursor: pointer;
+}
+.moreWidth {
+  width: 120%;
 }
 @media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .newsCard {
@@ -510,7 +513,8 @@ md-content {
     padding-bottom: 3rem;
   }
   .newsCard .cardImages {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   .newsCard .cardImages .newsImage {
     height: 18rem;
@@ -678,14 +682,17 @@ md-content {
     margin: 2rem 8%;
   }
   .paragraphWrapper .paragraphHeader {
-    padding: 1rem 1rem;
+    padding: 1rem 1rem !important;
     font-size: 3.5rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
   .paragraphWrapper .paragraphContent {
     padding: 0 1rem;
     line-height: 4rem;
     font-size: 3rem;
+  }
+  .paragraphWrapper .extraMargin {
+    margin-top: 12rem;
   }
 }
 .terminEntry {

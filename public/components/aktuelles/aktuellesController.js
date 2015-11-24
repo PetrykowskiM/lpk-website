@@ -38,6 +38,10 @@ landingPage.controller("aktuellesCtrl", ["$scope", "$state", 'lpk_dataProvider',
             clickOutsideToClose:true
         })
     }
+
+    $scope.bestellen = function(){
+        window.location.href = "mailto:bestellung@lpk-brandenburg.de?subject=LPK-Verzeichnis 2016 bestellen&body=Sehr geehrte Damen und Herren,%0D%0A%0D%0Ahiermit möchte ich ein Exemplar des LPK-Verzeichnisses bestellen.%0D%0A%0D%0AMit freundlichen Grüßen";
+    }
 }])
 
 function ImageViewerController($scope, $mdDialog, imagePath, imageIndex, images){

@@ -25,6 +25,8 @@ landingPage.controller("aktivitaetenCtrl", ["$scope", 'lpk_dataProvider', '$mdDi
         })
     }
 
+
+
 }])
 
 function ImageViewerController($scope, $mdDialog, imagePath, imageIndex, images){
