@@ -426,7 +426,7 @@ md-content {
 @media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .mainContent {
     height: auto;
-    margin-top: 10rem;
+    margin-top: 3rem;
     padding-top: 0;
   }
   .contentContainer {
@@ -675,6 +675,7 @@ md-content {
 }
 .generalActivities {
   margin-bottom: 2rem;
+  display: inline-table;
 }
 @media only screen  and (min-device-width: 375px)  and (max-device-width : 667px),(min-device-width : 320px)  and (max-device-width : 568px),(min-device-width : 320px)  and (max-device-width : 480px) {
   .paragraphWrapper {
@@ -690,9 +691,6 @@ md-content {
     padding: 0 1rem;
     line-height: 4rem;
     font-size: 3rem;
-  }
-  .paragraphWrapper .extraMargin {
-    margin-top: 12rem;
   }
 }
 .terminEntry {
