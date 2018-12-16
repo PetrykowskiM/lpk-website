@@ -1,20 +1,30 @@
 <div class="contentContainer">
-    <div class="ziele" layout="column" layout-gt-lg="row">
-
-        <div class="zielWrapper" ng-repeat="ziel in ziele" flex>
-            <div class="zielHead" ng-class="{'shorter': ziel.shorter}">
-                {{ziel.head}}
-            </div>
-            <div class="zielBody">
-                {{ziel.body}}
-            </div>
-        </div>
-
+  <div class="ziele" layout="column" layout-gt-lg="row">
+    <div class="zielWrapper" ng-repeat="ziel in ziele" flex>
+      <div class="zielHead" ng-class="{'shorter': ziel.shorter}">
+        {{ ziel.head }}
+      </div>
+      <div class="zielBody">{{ ziel.body }}</div>
     </div>
-    <div class="centerButton">
-        <md-button class="md-raised md-primary standardButton" ng-click="mitgliedWerden()">Mitglied werden</md-button>
-        <md-button class="md-raised md-primary standardButton" ng-click="bestellen()">LPK-Verzeichnis bestellen</md-button>
-        <md-button class="md-raised md-primary standardButton" ng-click="satzung()">Satzung herunterladen</md-button>
-    </div>
-
+  </div>
+  <div class="centerButton">
+    <md-button
+      class="md-raised md-primary standardButton"
+      ng-click="mitgliedWerden()"
+      >Mitglied werden</md-button
+    >
+    <md-button
+      class="md-raised md-primary standardButton"
+      ng-click="bestellen()"
+      >LPK-Verzeichnis bestellen</md-button
+    >
+    <md-button class="md-raised md-primary standardButton" ng-click="satzung()"
+      >Satzung herunterladen</md-button
+    >
+    <md-button
+      class="md-raised md-primary standardButton"
+      ng-click="wahlordnung()"
+      >Wahlordnung herunterladen</md-button
+    >
+  </div>
 </div>
