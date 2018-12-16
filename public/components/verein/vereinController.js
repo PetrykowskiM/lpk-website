@@ -36,7 +36,7 @@ landingPage.controller("vereinCtrl", [
     };
 
     $scope.wahlordnung = function() {
-      window.open("/assets/files/wahlordnung.pdf", "_blank");
+      window.open("/assets/files/wahlordnung.docx", "_blank");
     };
   }
 ]);
