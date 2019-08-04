@@ -35,6 +35,10 @@ landingPage.controller("vereinCtrl", [
       window.open("/assets/files/Satzung_lpk-bb.pdf", "_blank");
     };
 
+    $scope.datenschutz = function() {
+      window.open("/assets/files/datenschutzverordnung.pdf", "_blank");
+    };
+
     $scope.wahlordnung = function() {
       window.open("/assets/files/wahlordnung.docx", "_blank");
     };
